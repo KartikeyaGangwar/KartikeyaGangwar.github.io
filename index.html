@@ -3,196 +3,481 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartikey Singh | Research</title>
+    <title>Kartikey Singh (Kartikeya Gangwar) | Computational Mathematics & SciML</title>
+    <meta name="description" content="Research portfolio of Kartikey Singh (Kartikeya Gangwar) - Scientific Machine Learning, Symplectic Systems, High-Dimensional PDEs, and High-Performance Scientific Computing.">
+    <link rel="canonical" href="https://kartikeyagangwar.github.io/">
     <style>
-        /* Reset and base */
-        * { margin: 0; padding: 0; box-sizing: border-box; }
-        
+        /* Base reset */
+        *, *::before, *::after { margin: 0; padding: 0; box-sizing: border-box; }
+
+        :root {
+            --bg-color: #fdfdfd;
+            --text-color: #1a1a1a;
+            --text-muted: #555555;
+            --text-light: #777777;
+            --border-color: #e5e5e5;
+            --accent-color: #0b3c5d;
+            --link-color: #004d80;
+            --link-hover: #00264d;
+            --card-bg: #f9fafb;
+            --font-serif: "Charter", "Bitstream Charter", "Sitka Text", "Cambria", "Georgia", serif;
+            --font-sans: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Helvetica, Arial, sans-serif;
+            --font-mono: "SFMono-Regular", Menlo, Monaco, Consolas, "Liberation Mono", monospace;
+        }
+
         body {
-            font-family: 'Georgia', serif;
-            line-height: 1.8;
-            color: #222;
-            background: #fff;
-            max-width: 800px;
+            font-family: var(--font-serif);
+            font-size: 1.06rem;
+            line-height: 1.75;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            max-width: 820px;
             margin: 0 auto;
-            padding: 40px 20px;
+            padding: 50px 24px 80px 24px;
+            -webkit-font-smoothing: antialiased;
         }
-        
-        /* Typography */
+
+        /* Header */
+        header {
+            margin-bottom: 2.8rem;
+            border-bottom: 1.5px solid var(--border-color);
+            padding-bottom: 1.8rem;
+        }
+
         h1 {
-            font-weight: normal;
-            font-size: 2.2rem;
-            margin-bottom: 0.5rem;
-            color: #000;
+            font-size: 2.25rem;
+            font-weight: 600;
+            letter-spacing: -0.02em;
+            color: #111;
+            margin-bottom: 0.35rem;
         }
-        
+
         .subtitle {
-            font-size: 1.1rem;
-            color: #666;
-            margin-bottom: 2rem;
-            font-style: italic;
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+            font-weight: 400;
         }
-        
-        h2 {
-            font-weight: normal;
-            font-size: 1.4rem;
-            margin: 2.5rem 0 1rem 0;
-            color: #333;
-            border-bottom: 1px solid #ddd;
-            padding-bottom: 0.5rem;
-        }
-        
-        p {
+
+        .affiliation {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            color: var(--text-light);
             margin-bottom: 1.2rem;
-            text-align: justify;
         }
-        
+
+        .nav-links {
+            font-family: var(--font-sans);
+            font-size: 0.95rem;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 16px;
+        }
+
+        .nav-links a {
+            color: var(--link-color);
+            text-decoration: none;
+            font-weight: 500;
+            border-bottom: 1px solid transparent;
+            transition: border-color 0.15s ease;
+        }
+
+        .nav-links a:hover {
+            border-bottom-color: var(--link-hover);
+            color: var(--link-hover);
+        }
+
+        /* Headings */
+        h2 {
+            font-family: var(--font-sans);
+            font-size: 1.25rem;
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            color: var(--accent-color);
+            margin: 3.2rem 0 1.2rem 0;
+            border-bottom: 1px solid var(--border-color);
+            padding-bottom: 0.4rem;
+        }
+
+        h3 {
+            font-size: 1.15rem;
+            font-weight: 600;
+            margin: 1.8rem 0 0.8rem 0;
+            color: #222;
+        }
+
+        p {
+            margin-bottom: 1.1rem;
+            text-align: left;
+        }
+
         ul {
-            margin-left: 1.5rem;
-            margin-bottom: 1.5rem;
+            margin-left: 1.4rem;
+            margin-bottom: 1.4rem;
         }
-        
+
         li {
-            margin-bottom: 0.5rem;
+            margin-bottom: 0.45rem;
         }
-        
+
         /* Links */
         a {
-            color: #000;
+            color: var(--link-color);
             text-decoration: underline;
             text-decoration-thickness: 1px;
             text-underline-offset: 3px;
         }
-        
+
         a:hover {
+            color: var(--link-hover);
             text-decoration-thickness: 2px;
         }
-        
-        /* Paper citation style */
-        .paper {
-            margin: 1.5rem 0;
-            padding-left: 1rem;
-            border-left: 3px solid #eee;
+
+        /* Papers & Projects */
+        .paper-item {
+            margin-bottom: 1.8rem;
+            padding-left: 1.1rem;
+            border-left: 3px solid #d0dbe5;
         }
-        
+
         .paper-title {
-            font-weight: bold;
+            font-weight: 600;
+            font-size: 1.1rem;
+            color: #111;
             display: block;
+            line-height: 1.45;
         }
-        
-        .paper-doi {
-            font-size: 0.9rem;
-            color: #666;
-        }
-        
-        /* Contact section */
-        .contact {
-            margin-top: 3rem;
-            padding-top: 1.5rem;
-            border-top: 1px solid #eee;
+
+        .paper-authors {
             font-size: 0.95rem;
-            color: #555;
+            color: var(--text-muted);
+            margin-top: 0.2rem;
         }
-        
-        /* Responsive */
+
+        .paper-venue {
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            color: #2c5e8a;
+            font-weight: 500;
+            margin-top: 0.2rem;
+        }
+
+        .paper-links {
+            font-family: var(--font-sans);
+            font-size: 0.88rem;
+            margin-top: 0.35rem;
+        }
+
+        .paper-desc {
+            font-size: 0.98rem;
+            color: #333;
+            margin-top: 0.45rem;
+            margin-bottom: 0;
+        }
+
+        /* Badges / Pills */
+        .badge {
+            display: inline-block;
+            font-family: var(--font-mono);
+            font-size: 0.78rem;
+            padding: 2px 7px;
+            background: #eef2f6;
+            color: #334155;
+            border-radius: 4px;
+            margin-right: 6px;
+            vertical-align: middle;
+        }
+
+        /* Documents / Download buttons */
+        .doc-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 16px;
+            margin: 1.2rem 0 2rem 0;
+        }
+
+        .doc-card {
+            background: var(--card-bg);
+            border: 1px solid var(--border-color);
+            border-radius: 6px;
+            padding: 18px 20px;
+            transition: transform 0.15s ease, border-color 0.15s ease;
+        }
+
+        .doc-card:hover {
+            border-color: #cbd5e1;
+            transform: translateY(-1px);
+        }
+
+        .doc-card h4 {
+            font-family: var(--font-sans);
+            font-size: 1.05rem;
+            margin-bottom: 0.3rem;
+            color: #1e293b;
+        }
+
+        .doc-card p {
+            font-size: 0.9rem;
+            color: var(--text-muted);
+            margin-bottom: 0.8rem;
+        }
+
+        .doc-card a.btn {
+            display: inline-block;
+            font-family: var(--font-sans);
+            font-size: 0.85rem;
+            font-weight: 500;
+            padding: 6px 14px;
+            background: var(--accent-color);
+            color: #ffffff;
+            text-decoration: none;
+            border-radius: 4px;
+        }
+
+        .doc-card a.btn:hover {
+            background: #08283e;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            margin-top: 4rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--border-color);
+            font-family: var(--font-sans);
+            font-size: 0.92rem;
+            color: var(--text-muted);
+        }
+
+        footer p {
+            margin-bottom: 0.6rem;
+        }
+
+        .footer-note {
+            font-size: 0.82rem;
+            color: var(--text-light);
+            margin-top: 1.2rem;
+        }
+
         @media (max-width: 600px) {
-            body { padding: 30px 15px; }
-            h1 { font-size: 1.8rem; }
+            body { padding: 30px 18px 60px 18px; }
+            h1 { font-size: 1.85rem; }
+            .doc-cards { grid-template-columns: 1fr; }
         }
     </style>
 </head>
 <body>
+
     <header>
-        <h1>Kartikey Singh</h1>
+        <h1>Kartikey Singh (Kartikeya Gangwar)</h1>
         <div class="subtitle">
-            Independent Researcher | Scientific Machine Learning
+            Computational Mathematician & Scientific Machine Learning Researcher
         </div>
+        <div class="affiliation">
+            Department of Mathematics, University of Delhi &bull; New Delhi, India
+        </div>
+        <nav class="nav-links">
+            <a href="#focus">Focus</a>
+            <a href="#publications">Publications & Preprints</a>
+            <a href="#software">Software & HPC</a>
+            <a href="#cv">CV & Resume</a>
+            <a href="#contact">Contact</a>
+        </nav>
     </header>
 
-    <section id="about">
-        <h2>Focus</h2>
-        <p>
-            I formalized <strong>Solution Manifold Incompatibility (SMI)</strong> — 
-            a structural limitation of linear multi-fidelity methods for nonlinear PDEs. 
-            The work demonstrates that linear fusion of solutions from distinct nonlinear 
-            operators is mathematically inadmissible, regardless of optimization quality 
-            or model capacity.
-        </p>
-        <p>
-            My approach is implementation-driven: building computational experiments, 
-            isolating systematic failure modes, then formalizing observations through 
-            operator-theoretic arguments.
-        </p>
-    </section>
-
-    <section id="research">
-        <h2>Research</h2>
-        
-        <div class="paper">
-            <span class="paper-title">Solution Manifold Incompatibility in Multi-Fidelity PINNs</span>
-            <br>
-            <em>Kartikey Singh</em>
-            <br>
-            <span class="paper-doi">
-                DOI: <a href="https://doi.org/10.5281/zenodo.17794638">10.5281/zenodo.17794638</a> | 
-                Code: <a href="https://github.com/KartikeyGangwar/MF-PINN-SMI-Failure-Modes">GitHub</a>
-            </span>
-            <p style="margin-top: 0.5rem;">
-                Introduces the SMI framework with analytical proofs of operator non-closure under linear fusion. 
-                Presents numerical experiments across Allen–Cahn, Burgers, and Navier–Stokes equations. 
-                Includes open-source implementation and diagnostic metrics.
+    <main>
+        <section id="focus">
+            <h2>Research Focus</h2>
+            <p>
+                My research investigates the interface of <strong>Scientific Machine Learning (SciML)</strong>, 
+                <strong>Symplectic Mechanics</strong>, <strong>Inverse Problems</strong>, and <strong>High-Dimensional Stochastic PDEs</strong>.
+                Rather than treating neural networks as empirical black boxes, my work formulates neural architectures around 
+                <strong>exact mathematical invariants</strong>:
             </p>
-        </div>
-    </section>
+            <ul>
+                <li><strong>Geometric Structure Preservation:</strong> Preserving exact symplectic differential 2-forms ($\omega = \sum dq^i \wedge dp_i$) and contact Hamiltonian phase spaces for non-conservative and relativistic celestial orbits.</li>
+                <li><strong>The Adaptive Subspace (AS) Paradigm:</strong> Resolving capacity interference and destructive multi-task gradient conflict via parameter null-space decomposition ($\Theta_0 \oplus \Theta_1$) and parameter-space Adaptive Mesh Refinement (AMR).</li>
+                <li><strong>Curse of Dimensionality Elimination:</strong> Forward-mode directional autograd trace contractions evaluating high-dimensional diffusion operators in strictly $\mathcal{O}(d)$ linear complexity ($<3\,\mathrm{GB}$ VRAM for 50-asset American basket options).</li>
+                <li><strong>Zero-Allocation Real-Time Systems:</strong> Deterministic 2000Hz soft-body physics telemetry engines and high-performance finite difference solvers operating at hardware memory bandwidth ceilings.</li>
+            </ul>
+        </section>
 
-    <section id="software">
-        <h2>Software</h2>
-        <ul>
-            <li>
-                <strong>MF-PINN SMI Study</strong> – 
-                <a href="https://github.com/KartikeyGangwar/MF-PINN-SMI-Failure-Modes">Full codebase</a> 
-                for reproducing paper results (PyTorch, LaTeX, documentation)
-            </li>
-            <li>
-                <strong>Lid-Driven Cavity Solver</strong> – 
-                <a href="https://github.com/KartikeyGangwar/lid-driven-cavity-cfd">High-performance CFD</a> 
-                (finite difference, validated to Re=1000)
-            </li>
-            <li>
-                <strong>Fluid Dynamics PINNs</strong> – 
-                <a href="https://github.com/KartikeyGangwar/Fluid-Dynamics-PINNs">Comparative study</a> 
-                of formulations for Navier–Stokes
-            </li>
-        </ul>
-    </section>
+        <section id="publications">
+            <h2>Research Manuscripts & Working Papers</h2>
 
-    <section id="cv">
-        <h2>Curriculum Vitae</h2>
+            <div class="paper-item">
+                <span class="paper-title">Derivative-Informed Neural Forward Surrogates with Directional Sensitivity Supervision for Shape Inversion in Electrical Impedance Tomography</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Under Review at IEEE Transactions on Computational Imaging (TCI)</div>
+                <div class="paper-links">
+                    <span class="badge">Inverse PDE</span>
+                    <a href="https://doi.org/10.5281/zenodo.22096368" target="_blank">Preprint DOI: 10.5281/zenodo.22096368</a> &bull;
+                    <a href="https://github.com/KartikeyaGangwar/eit-neural-surrogate-inversion" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Resolves the logarithmic ill-posedness of the continuous Calderón problem via stochastic directional Jacobian-Vector Product (JVP) supervision on $\mathbb{S}^{63}$. Delivers a $56.8	imes$ wall-clock speedup ($35.6\,\mathrm{ms}$ vs $2.02\,\mathrm{s}$/step) with bounded $342.8\,\mathrm{MB}$ VRAM.
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Causality-Preserving Adaptive Symplectic Hamiltonian Neural Networks (CPA-SHNN) for Autonomous and Non-Autonomous Multi-Body Gravitational Dynamics</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong>, Prof. Vinay Kumar</div>
+                <div class="paper-venue">Working Paper (Target: Astronomy & Computing / MNRAS)</div>
+                <div class="paper-links">
+                    <span class="badge">Geometric DL</span>
+                    <a href="https://github.com/KartikeyaGangwar/cpa-shnn" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Proves separable Kinetic-Coriolis splitting ($
+abla_{\mathbf{z}} \cdot \mathbf{f}_	heta \equiv 0$) and Arnold extended contact phase spaces across 6 chaotic systems (Binary Quasars, Sitnikov 5-Body, CR3BP). Achieves up to $126.4	imes$ Fourier error collapse on gravitational saddle points.
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Decoupling Gradient Conflicts in Physics-Informed Neural Networks via Null-Space Parameter Subspaces</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong>, Samarjeet Malik</div>
+                <div class="paper-venue">Preprint (Target: Journal of Computational Physics)</div>
+                <div class="paper-links">
+                    <span class="badge">Optimization</span>
+                    <a href="https://doi.org/10.5281/zenodo.22132799" target="_blank">Preprint DOI: 10.5281/zenodo.22132799</a> &bull;
+                    <a href="https://github.com/KartikeyaGangwar/null-space-pinn" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Algebraically decomposes network parameter manifolds into orthogonal direct-sum subspaces ($\Theta_0 \oplus \Theta_1$) coupled via a $C^2$ Quintic Hermite seam operator, rigorously eliminating boundary-PDE gradient clash without second-order regularity degradation.
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Adaptive N-Subspace Physics-Informed Neural Networks (AS-PINN): Autonomous Domain Decomposition via Parameter-Space Adaptive Mesh Refinement</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Working Paper (Target: SIAM Journal on Scientific Computing)</div>
+                <div class="paper-links">
+                    <span class="badge">SciML AMR</span>
+                    <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Introduces vectorized per-sample Gram alignment profiling (`torch.func.vmap`) with exact zero-disruption cleavage invariance ($\|u^{(N+1)} - u^{(N)}\| = 0$). Verified across 9 canonical PDEs, achieving a $725.6	imes$ loss reduction on high-frequency Helmholtz ($k=4\pi$).
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Deep Early Exercise Premium PINNs for High-Dimensional Free-Boundary Obstacle Problems in American Basket Options</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Working Paper (Target: Journal of Computational Finance / Quantitative Finance)</div>
+                <div class="paper-links">
+                    <span class="badge">Stochastic Control</span>
+                    <a href="https://github.com/KartikeyaGangwar/Deep-EEP-PINN" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Embeds the Kim/CJM Early Exercise Premium decomposition into a hard-constrained ansatz, pricing correlated American basket options up to $d=50$ assets (1,225 correlations) via directional autograd trace contractions in $\mathcal{O}(d)$ linear complexity ($<3\,\mathrm{GB}$ VRAM).
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">AS-ViT: Adaptive Subspace Vision Transformers with Autonomous Gradient-Clash Routing for Multi-Task Learning</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Working Paper (Target: IEEE TPAMI / CVPR)</div>
+                <div class="paper-links">
+                    <span class="badge">Multi-Task Vision</span>
+                    <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Eliminates destructive negative transfer in dense multi-task vision backbones by monitoring inter-task Gram matrix negative eigenvalues and routing latent token expert subspaces using Partition of Unity (PoU) gating ($+5.84\%$ mean gain on NYUv2).
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Formulation-Induced Failure Modes in Physics-Informed Neural Networks for High-Reynolds-Number Incompressible Flows</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Working Paper (Target: Physics of Fluids / CMAME)</div>
+                <div class="paper-links">
+                    <span class="badge">CFD / PINN</span>
+                    <a href="https://github.com/KartikeyaGangwar/pinn-fluid-formulations" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Demonstrates that continuous streamfunction-vorticity ($\psi-\omega$) PINNs suffer from operator diffusion and false convergence due to the absence of discrete Thom wall-vorticity stencils, whereas retaining pressure $p$ in $\psi-p$ functions as an exact Helmholtz-Hodge projection.
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">Bayesian PINN Fidelity & Parameter-Resolved Error Localization Framework</span>
+                <div class="paper-authors"><strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Working Paper (Target: Reliability Engineering & System Safety)</div>
+                <div class="paper-links">
+                    <span class="badge">Uncertainty UQ</span>
+                    <a href="https://github.com/KartikeyaGangwar/PINN-Bayesian-Posterior-Fidelity" target="_blank">Codebase</a>
+                </div>
+                <p class="paper-desc">
+                    Formulates the Bayesian Fidelity Ratio (BFR) based on the Kantorovich-Rubinstein 1-Wasserstein optimal transport distance normalized by empirical MCMC stochastic noise floors to diagnose inverse posterior distortion.
+                </p>
+            </div>
+        </section>
+
+        <section id="software">
+            <h2>Scientific Software & HPC Infrastructure</h2>
+
+            <div class="paper-item">
+                <span class="paper-title">High-Performance 2D Navier-Stokes Finite Difference Solver</span>
+                <div class="paper-authors">Lead Developer: <strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">C++ / Vectorized NumPy &bull; DOI: 10.5281/zenodo.18312938</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.5281/zenodo.18312938" target="_blank">Zenodo Archive</a> &bull;
+                    <a href="https://github.com/KartikeyaGangwar/Lid-Driven-Cavity-FDM-Solver" target="_blank">GitHub Repository</a>
+                </div>
+                <p class="paper-desc">
+                    Ground-truth numerical generator for fluid benchmark validation. Features coupled streamfunction-vorticity formulation with Peaceman-Rachford Alternating Direction Implicit (ADI) time-stepping and Red-Black SOR Chebyshev acceleration on dense $251 	imes 251$ grids ($Re=1000$).
+                </p>
+            </div>
+
+            <div class="paper-item">
+                <span class="paper-title">BeamNG Research SDK (BRSDK)</span>
+                <div class="paper-authors">Architect & Lead Developer: <strong>Kartikey Singh</strong></div>
+                <div class="paper-venue">Lua / Python / Systems &bull; DOI: 10.5281/zenodo.21729606</div>
+                <div class="paper-links">
+                    <a href="https://doi.org/10.5281/zenodo.21729606" target="_blank">Zenodo Archive</a> &bull;
+                    <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank">GitHub Repository</a>
+                </div>
+                <p class="paper-desc">
+                    Near-zero-allocation telemetry extraction and autonomous simulation framework operating inside the 2000Hz Vehicle Lua physics thread of BeamNG.tech. Features static pre-allocated ring buffers, decoupled layout closures, and RFC 8259 JSON metadata sidecars.
+                </p>
+            </div>
+        </section>
+
+        <section id="cv">
+            <h2>Curriculum Vitae & Resume</h2>
+            <p>
+                Download updated PDF documents detailing my academic research trajectory, publications, software packages, and technical background:
+            </p>
+            <div class="doc-cards">
+                <div class="doc-card">
+                    <h4>Academic Curriculum Vitae</h4>
+                    <p>Comprehensive 4-page CV detailing research profile, manuscripts under review, mathematical formulation breakdowns, and supervisor details.</p>
+                    <a href="Kartikeya_cv.pdf" class="btn" target="_blank">Download CV (PDF)</a>
+                </div>
+                <div class="doc-card">
+                    <h4>Industry & Engineering Resume</h4>
+                    <p>Concise 2-page industry-tailored resume emphasizing high-performance scientific computing, deep autograd engineering, and production codebases.</p>
+                    <a href="Kartikeya_Resume.pdf" class="btn" target="_blank">Download Resume (PDF)</a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer id="contact">
+        <p><strong>Contact & Identifiers:</strong></p>
         <p>
-            <a href="Kartikey_cv.pdf">Download PDF</a> (updated Feb 2025)
+            Email: <a href="mailto:kartikeysingh525@protonmail.com">kartikeysingh525@protonmail.com</a><br>
+            ORCID: <a href="https://orcid.org/0009-0009-1973-7532" target="_blank">0009-0009-1973-7532</a><br>
+            GitHub: <a href="https://github.com/KartikeyaGangwar" target="_blank">github.com/KartikeyaGangwar</a><br>
+            LinkedIn: <a href="https://www.linkedin.com/in/kartikey-singh-2a3434329/" target="_blank">linkedin.com/in/kartikey-singh-2a3434329</a><br>
+            Zenodo: <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Singh%2C%20Kartikey%22" target="_blank">Kartikey Singh on Zenodo</a>
         </p>
-    </section>
-
-    <section id="education">
-        <h2>Background</h2>
-        <p>
-            <strong>University of Delhi</strong><br>
-            B.Sc. (Honors) Mathematics, 2023–2027 (Expected)<br>
-            <em>Independent research conducted prior to formal research year</em>
-        </p>
-    </section>
-
-    <footer class="contact">
-        <p>
-            <strong>Contact:</strong> kartikeygangwar525@gmail.com<br>
-            <strong>GitHub:</strong> <a href="https://github.com/KartikeyGangwar">KartikeyGangwar</a><br>
-            <strong>LinkedIn:</strong> <a href="https://linkedin.com/in/kartikey-singh-2a3434329">Kartikey</a><br>
-            <strong>Twitter:</strong> <a href="https://x.com/KartikeyGangwar">KartikeyGangwar</a><br>
-            <strong>ORCID:</strong> 0009-0009-1973-7532
-        </p>
-        <p style="margin-top: 1rem; font-size: 0.85rem; color: #888;">
-            This site is hosted on GitHub Pages. Last updated Feb 2025.
+        <p class="footer-note">
+            &copy; 2026 Kartikey Singh (Kartikeya Gangwar). Hosted on GitHub Pages.
         </p>
     </footer>
+
 </body>
 </html>
