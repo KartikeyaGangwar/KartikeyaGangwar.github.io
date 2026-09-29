@@ -628,17 +628,18 @@
                     </div>
                     <div class="project-body">
                         <div class="project-meta">
-                            <span class="project-venue-badge">Target: Physics of Fluids / CMAME</span>
+                            <span class="project-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Under Review: Physics of Fluids</span>
                             <span>Fluid Mechanics</span>
                         </div>
                         <h3 class="project-title">High-Re Incompressible Flow: PINN Operator Conditioning</h3>
                         <p class="project-summary">
-                            Identifies operator diffusion and false convergence in continuous $\psi-\omega$ PINNs caused by lack of discrete spatial stencils for Thom's wall-vorticity formula. Formulates hard-constrained $\psi-p$ Helmholtz-Hodge projection, accurately capturing secondary corner eddies at $Re=1000$ validated against Ghia (1982).
+                            Identifies operator diffusion and false convergence in continuous $\psi-\omega$ PINNs caused by lack of discrete spatial stencils for Thom's wall-vorticity formula. Formulates hard-constrained $\psi-p$ Helmholtz-Hodge projection, accurately capturing secondary corner eddies at $Re=1000$ validated against Ghia (1982). <strong>[MS #POF26-AR-14856]</strong>
                         </p>
                         <div class="project-math-highlight">
                             <strong>Hard Constraint:</strong> $\nabla \cdot \mathbf{u} = \frac{\partial^2 \psi}{\partial x \partial y} - \frac{\partial^2 \psi}{\partial y \partial x} \equiv 0$
                         </div>
                         <div class="project-actions">
+                            <a href="https://doi.org/10.5281/zenodo.22979276" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22979276 &rarr;</a>
                             <a href="https://github.com/KartikeyaGangwar/pinn-fluid-formulations" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
                         </div>
                     </div>
@@ -663,6 +664,7 @@
                             <strong>Invariance:</strong> $\|u^{(N+1)}(\mathbf{x}) - u^{(N)}(\mathbf{x})\|_{L^2} = 0 \implies \mathcal{L}(\theta^{(N+1)}) = \mathcal{L}(\theta^{(N)})$
                         </div>
                         <div class="project-actions">
+                            <a href="https://doi.org/10.5281/zenodo.22822521" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22822521 &rarr;</a>
                             <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
                         </div>
                     </div>
@@ -700,15 +702,15 @@
                     </div>
                     <div class="project-body">
                         <div class="project-meta">
-                            <span class="project-venue-badge">Target: J. Computational Physics (JCP)</span>
+                            <span class="project-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Under Review: CMAME (Elsevier)</span>
                             <span>Optimization</span>
                         </div>
-                        <h3 class="project-title">Null-Space Decoupling via $C^2$ Quintic Hermite Operators</h3>
+                        <h3 class="project-title">Parameter Decoupling & Interface Transmission in PINNs</h3>
                         <p class="project-summary">
-                            Decomposes parameter manifolds into orthogonal direct-sum subspaces ($\Theta_0 \oplus \Theta_1$ with $\mathcal{W}_0 \mathcal{W}_1^T = \mathbf{0}$) coupled via a $C^2$ Quintic Hermite seam operator ($\psi(\xi) = 10\xi^3 - 15\xi^4 + 6\xi^5$). Formally proves structural gradient orthogonality ($\langle \nabla\mathcal{L}_{\mathrm{if}}, \nabla\mathcal{L}_{\mathrm{des}} \rangle \equiv 0$) on saturated domains.
+                            Decomposes parameter manifolds into orthogonal direct-sum subspaces ($\Theta_0 \oplus \Theta_1$ with $\mathcal{W}_0 \mathcal{W}_1^T = \mathbf{0}$) coupled via a $C^2$ Quintic Hermite seam operator ($\psi(\xi) = 6\xi^5 - 15\xi^4 + 10\xi^3$). Formally proves structural gradient orthogonality ($\langle \nabla\mathcal{L}_{\mathrm{if}}, \nabla\mathcal{L}_{\mathrm{des}} \rangle \equiv 0$) on saturated domains. Evaluated across 10 matched-capacity models on 3D Linear Paul Ion Traps. <strong>[MS #CMAME-D-26-05120]</strong>
                         </p>
                         <div class="project-math-highlight">
-                            <strong>Orthogonality:</strong> $\Theta = \Theta_0 \oplus \Theta_1 \implies \langle \mathbf{g}_{\mathrm{pde}}, \mathbf{g}_{\mathrm{data}} \rangle \equiv 0$
+                            <strong>Orthogonality:</strong> $\Theta = \Theta_0 \oplus \Theta_1 \implies \langle \mathbf{g}_{\mathrm{if}}, \mathbf{g}_{\mathrm{des}} \rangle \equiv 0$
                         </div>
                         <div class="project-actions">
                             <a href="https://doi.org/10.5281/zenodo.22132799" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22132799 &rarr;</a>
@@ -736,6 +738,7 @@
                             <strong>Clash Routing:</strong> $\lambda_{\min}(\mathcal{G}) < -\tau_{\mathrm{conflict}} \implies \text{Cleave Dedicated Subspace}$
                         </div>
                         <div class="project-actions">
+                            <a href="https://doi.org/10.5281/zenodo.22974130" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22974130 &rarr;</a>
                             <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
                         </div>
                     </div>
