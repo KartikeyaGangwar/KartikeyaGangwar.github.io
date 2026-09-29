@@ -1,6 +1,6 @@
 # KartikeyaGangwar.github.io
 
-Source code for the personal research portfolio of **Kartikey Singh (Kartikeya Gangwar)**.
+Source code for the personal research portfolio of **Kartikeya Gangwar** (Official / Academic Documents: Kartikey Singh).
 
 Live site: [https://kartikeyagangwar.github.io/](https://kartikeyagangwar.github.io/)
 
