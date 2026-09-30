@@ -3,17 +3,17 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Kartikeya Gangwar | Computational Mathematics & Scientific AI</title>
-    <meta name="description" content="Research portfolio of Kartikeya Gangwar — Scientific Machine Learning, Symplectic Mechanics, High-Dimensional Stochastic PDEs, and High-Performance Scientific Computing. Department of Mathematics, University of Delhi.">
+    <title>Kartikeya Gangwar — Mathematician, Builder & Researcher</title>
+    <meta name="description" content="Personal space of Kartikeya Gangwar — Scientific Machine Learning, Symplectic Mechanics, Physical Grit, Sketching, and Open-Source Systems. Department of Mathematics, University of Delhi.">
     <meta name="author" content="Kartikeya Gangwar">
     <link rel="canonical" href="https://kartikeyagangwar.github.io/">
 
-    <!-- Fonts: Inter for UI, JetBrains Mono for math/code -->
+    <!-- Typography: Inter for UI, Newsreader for editorial reading, JetBrains Mono for math/code -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400&family=JetBrains+Mono:wght@400;500&display=swap" rel="stylesheet">
 
-    <!-- KaTeX for exact, beautiful mathematical rendering -->
+    <!-- KaTeX for exact mathematical rendering -->
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.css">
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/katex.min.js"></script>
     <script defer src="https://cdn.jsdelivr.net/npm/katex@0.16.8/dist/contrib/auto-render.min.js"></script>
@@ -41,39 +41,65 @@
 
     <style>
         :root {
-            --bg-page: #fcfcfd;
+            --bg-page: #fbfbfa;
             --bg-card: #ffffff;
-            --text-primary: #111827;
-            --text-secondary: #4b5563;
-            --text-tertiary: #6b7280;
-            --accent-blue: #0284c7;
-            --accent-blue-hover: #0369a1;
-            --border-light: #e5e7eb;
-            --border-subtle: #f3f4f6;
-            --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.04);
-            --card-shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.09);
-            --tag-bg: #f3f4f6;
-            --tag-text: #1f2937;
+            --text-main: #1c1c1c;
+            --text-muted: #555555;
+            --text-faint: #7e7e7e;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --border: #e8e8e6;
+            --border-subtle: #f0f0ee;
+            --tag-bg: #f2f2ef;
+            --tag-text: #2c2c2c;
+            --font-serif: 'Newsreader', Georgia, serif;
             --font-sans: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
             --font-mono: 'JetBrains Mono', monospace;
+            --max-w: 860px;
         }
 
         @media (prefers-color-scheme: dark) {
             :root {
-                --bg-page: #0b0f19;
-                --bg-card: #111827;
-                --text-primary: #f9fafb;
-                --text-secondary: #9ca3af;
-                --text-tertiary: #6b7280;
-                --accent-blue: #38bdf8;
-                --accent-blue-hover: #7dd3fc;
-                --border-light: #1f2937;
-                --border-subtle: #161e2e;
-                --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.35);
-                --card-shadow-hover: 0 14px 32px rgba(0, 0, 0, 0.5);
-                --tag-bg: #1f2937;
-                --tag-text: #e5e7eb;
+                --bg-page: #0d1117;
+                --bg-card: #161b22;
+                --text-main: #e6edf3;
+                --text-muted: #9aa4b0;
+                --text-faint: #6e7681;
+                --accent: #38bdf8;
+                --accent-hover: #7dd3fc;
+                --border: #30363d;
+                --border-subtle: #21262d;
+                --tag-bg: #21262d;
+                --tag-text: #c9d1d9;
             }
+        }
+
+        [data-theme="light"] {
+            --bg-page: #fbfbfa;
+            --bg-card: #ffffff;
+            --text-main: #1c1c1c;
+            --text-muted: #555555;
+            --text-faint: #7e7e7e;
+            --accent: #0284c7;
+            --accent-hover: #0369a1;
+            --border: #e8e8e6;
+            --border-subtle: #f0f0ee;
+            --tag-bg: #f2f2ef;
+            --tag-text: #2c2c2c;
+        }
+
+        [data-theme="dark"] {
+            --bg-page: #0d1117;
+            --bg-card: #161b22;
+            --text-main: #e6edf3;
+            --text-muted: #9aa4b0;
+            --text-faint: #6e7681;
+            --accent: #38bdf8;
+            --accent-hover: #7dd3fc;
+            --border: #30363d;
+            --border-subtle: #21262d;
+            --tag-bg: #21262d;
+            --tag-text: #c9d1d9;
         }
 
         *, *::before, *::after {
@@ -85,332 +111,299 @@
         body {
             font-family: var(--font-sans);
             background-color: var(--bg-page);
-            color: var(--text-primary);
-            line-height: 1.65;
+            color: var(--text-main);
+            line-height: 1.75;
             -webkit-font-smoothing: antialiased;
-            overflow-x: hidden;
+            padding: 0 20px 80px 20px;
         }
 
         .container {
-            max-width: 1160px;
+            max-width: var(--max-w);
             margin: 0 auto;
-            padding: 0 24px;
         }
 
-        /* Site Header */
-        header.site-header {
-            position: sticky;
-            top: 0;
-            background: rgba(252, 252, 253, 0.88);
-            backdrop-filter: blur(16px);
-            -webkit-backdrop-filter: blur(16px);
-            z-index: 100;
-            border-bottom: 1px solid var(--border-light);
-            padding: 16px 0;
-        }
-
-        @media (prefers-color-scheme: dark) {
-            header.site-header {
-                background: rgba(11, 15, 25, 0.88);
-            }
-        }
-
-        .nav-inner {
+        /* Top Bar */
+        .top-nav {
             display: flex;
             justify-content: space-between;
             align-items: center;
+            padding: 32px 0 24px 0;
+            border-bottom: 1px solid var(--border-subtle);
+            margin-bottom: 40px;
         }
 
-        .nav-brand {
-            font-weight: 700;
-            font-size: 1.1rem;
-            color: var(--text-primary);
+        .nav-name {
+            font-family: var(--font-serif);
+            font-size: 1.4rem;
+            font-weight: 500;
+            color: var(--text-main);
             text-decoration: none;
             letter-spacing: -0.01em;
         }
 
-        .nav-links {
+        .nav-right {
             display: flex;
-            gap: 22px;
+            align-items: center;
+            gap: 18px;
         }
 
         .nav-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
-            font-size: 0.94rem;
+            font-size: 0.92rem;
             font-weight: 500;
             transition: color 0.15s ease;
         }
 
         .nav-links a:hover {
-            color: var(--accent-blue);
+            color: var(--accent);
         }
 
-        /* Hero Section */
+        .theme-toggle-btn {
+            background: none;
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            cursor: pointer;
+            padding: 5px 10px;
+            border-radius: 6px;
+            font-size: 0.85rem;
+            font-family: var(--font-mono);
+        }
+
+        /* Hero */
         .hero {
-            padding: 70px 0 45px 0;
-            border-bottom: 1px solid var(--border-light);
+            margin-bottom: 48px;
         }
 
-        .hero-title {
+        .hero h1 {
+            font-family: var(--font-serif);
             font-size: 2.85rem;
-            font-weight: 700;
-            letter-spacing: -0.035em;
-            line-height: 1.15;
-            color: var(--text-primary);
-            margin-bottom: 14px;
-        }
-
-        .hero-subtitle {
-            font-size: 1.25rem;
-            color: var(--text-secondary);
             font-weight: 400;
-            max-width: 860px;
-            line-height: 1.55;
-            margin-bottom: 18px;
+            letter-spacing: -0.025em;
+            line-height: 1.15;
+            margin-bottom: 12px;
         }
 
-        .hero-affiliation {
-            font-size: 0.98rem;
-            color: var(--text-tertiary);
-            margin-bottom: 26px;
+        .hero-meta {
+            font-size: 0.95rem;
+            color: var(--text-faint);
+            margin-bottom: 20px;
         }
 
-        .hero-links {
+        .hero-lead {
+            font-family: var(--font-serif);
+            font-size: 1.25rem;
+            color: var(--text-muted);
+            line-height: 1.6;
+            margin-bottom: 24px;
+        }
+
+        .hero-actions {
             display: flex;
             flex-wrap: wrap;
             gap: 12px;
+            margin-bottom: 12px;
         }
 
-        .btn {
+        .btn-pill {
             display: inline-flex;
             align-items: center;
-            gap: 6px;
+            padding: 7px 16px;
+            border-radius: 20px;
             font-size: 0.88rem;
             font-weight: 500;
-            padding: 9px 18px;
-            border-radius: 8px;
             text-decoration: none;
-            transition: all 0.2s ease;
-        }
-
-        .btn-primary {
-            background-color: var(--accent-blue);
-            color: #ffffff;
-        }
-
-        .btn-primary:hover {
-            background-color: var(--accent-blue-hover);
-            transform: translateY(-1px);
-        }
-
-        .btn-secondary {
-            background-color: var(--tag-bg);
-            color: var(--tag-text);
-            border: 1px solid var(--border-light);
-        }
-
-        .btn-secondary:hover {
-            border-color: var(--text-tertiary);
-            transform: translateY(-1px);
-        }
-
-        /* Section Header */
-        .section-header {
-            margin: 55px 0 24px 0;
-            display: flex;
-            justify-content: space-between;
-            align-items: flex-end;
-            flex-wrap: wrap;
-            gap: 16px;
-        }
-
-        .section-title {
-            font-size: 1.75rem;
-            font-weight: 700;
-            letter-spacing: -0.02em;
-            color: var(--text-primary);
-        }
-
-        .section-desc {
-            font-size: 0.98rem;
-            color: var(--text-secondary);
-            margin-top: 4px;
-        }
-
-        /* Filter Tabs */
-        .filter-tabs {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 8px;
-            margin-bottom: 30px;
-        }
-
-        .tab-btn {
-            padding: 8px 16px;
-            font-size: 0.86rem;
-            font-weight: 500;
-            background: var(--tag-bg);
-            color: var(--text-secondary);
-            border: 1px solid transparent;
-            border-radius: 6px;
-            cursor: pointer;
             transition: all 0.15s ease;
         }
 
-        .tab-btn:hover {
-            color: var(--text-primary);
-            border-color: var(--border-light);
+        .btn-primary {
+            background-color: var(--text-main);
+            color: var(--bg-page);
         }
 
-        .tab-btn.active {
-            background: var(--text-primary);
-            color: var(--bg-page);
+        .btn-primary:hover {
+            opacity: 0.9;
+        }
+
+        .btn-outline {
+            border: 1px solid var(--border);
+            color: var(--text-muted);
+            background: transparent;
+        }
+
+        .btn-outline:hover {
+            border-color: var(--accent);
+            color: var(--accent);
+        }
+
+        /* Section formatting */
+        .section {
+            margin-bottom: 56px;
+        }
+
+        .section-heading {
+            font-family: var(--font-serif);
+            font-size: 1.8rem;
+            font-weight: 500;
+            letter-spacing: -0.015em;
+            margin-bottom: 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid var(--border-subtle);
+        }
+
+        .prose p {
+            font-size: 1.04rem;
+            color: var(--text-muted);
+            margin-bottom: 16px;
+            line-height: 1.78;
+        }
+
+        .prose p strong {
+            color: var(--text-main);
             font-weight: 600;
         }
 
-        /* Project Cards Grid */
-        .projects-grid {
+        .prose em {
+            font-family: var(--font-serif);
+            font-style: italic;
+        }
+
+        /* Field Notes / Vignettes */
+        .vignettes-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fill, minmax(520px, 1fr));
-            gap: 32px;
-            margin-bottom: 70px;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 16px;
+            margin-top: 20px;
         }
 
-        @media (max-width: 600px) {
-            .projects-grid {
-                grid-template-columns: 1fr;
-            }
+        .vignette-card {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 20px;
         }
 
-        .project-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: 14px;
-            overflow: hidden;
-            box-shadow: var(--card-shadow);
-            transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
-            display: flex;
-            flex-direction: column;
+        .vignette-icon {
+            font-size: 1.4rem;
+            margin-bottom: 10px;
+            display: inline-block;
         }
 
-        .project-card:hover {
-            transform: translateY(-5px);
-            box-shadow: var(--card-shadow-hover);
-            border-color: var(--accent-blue);
+        .vignette-card h3 {
+            font-size: 1.05rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
         }
 
-        .project-thumb {
-            width: 100%;
-            height: 280px;
-            background: #0f1117;
-            position: relative;
-            overflow: hidden;
-            cursor: pointer;
-            display: flex;
-            align-items: center;
-            justify-content: center;
+        .vignette-card p {
+            font-size: 0.92rem;
+            color: var(--text-muted);
+            line-height: 1.6;
         }
 
-        .project-thumb img {
-            width: 100%;
-            height: 100%;
-            object-fit: cover;
-            transition: transform 0.35s ease;
+        /* Research entries */
+        .research-item {
+            background-color: var(--bg-card);
+            border: 1px solid var(--border);
+            border-radius: 10px;
+            padding: 24px;
+            margin-bottom: 22px;
+            transition: border-color 0.2s ease;
         }
 
-        .project-card:hover .project-thumb img {
-            transform: scale(1.03);
+        .research-item:hover {
+            border-color: var(--accent);
         }
 
-        .thumb-zoom-badge {
-            position: absolute;
-            bottom: 12px;
-            right: 12px;
-            background: rgba(0, 0, 0, 0.75);
-            color: #ffffff;
+        .item-status {
+            display: inline-block;
             font-size: 0.76rem;
-            padding: 4px 10px;
-            border-radius: 6px;
-            pointer-events: none;
-            backdrop-filter: blur(4px);
+            font-weight: 600;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+            padding: 3px 8px;
+            border-radius: 4px;
+            margin-bottom: 8px;
+        }
+
+        .status-review {
+            background: rgba(16, 185, 129, 0.12);
+            color: #059669;
+        }
+
+        .status-working {
+            background: rgba(2, 132, 199, 0.12);
+            color: #0284c7;
+        }
+
+        .research-item h3 {
+            font-size: 1.25rem;
+            font-weight: 600;
+            margin-bottom: 8px;
+            color: var(--text-main);
+            letter-spacing: -0.01em;
+        }
+
+        .research-item .desc {
+            font-size: 0.97rem;
+            color: var(--text-muted);
+            margin-bottom: 14px;
+            line-height: 1.65;
+        }
+
+        .item-figure-preview {
+            margin: 14px 0;
+            border-radius: 8px;
+            overflow: hidden;
+            border: 1px solid var(--border-subtle);
+            cursor: pointer;
+            background: #000000;
+        }
+
+        .item-figure-preview img {
+            width: 100%;
+            max-height: 280px;
+            object-fit: cover;
+            display: block;
+            opacity: 0.95;
+            transition: opacity 0.2s ease, transform 0.2s ease;
+        }
+
+        .item-figure-preview:hover img {
+            opacity: 1;
+            transform: scale(1.01);
+        }
+
+        .math-box {
+            background-color: var(--tag-bg);
+            border-left: 3px solid var(--accent);
+            padding: 8px 14px;
+            font-size: 0.88rem;
+            color: var(--tag-text);
+            margin-bottom: 14px;
+            border-radius: 0 4px 4px 0;
+            font-family: var(--font-mono);
+        }
+
+        .item-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 14px;
+            font-size: 0.9rem;
+        }
+
+        .item-links a {
+            color: var(--accent);
+            text-decoration: none;
             font-weight: 500;
         }
 
-        .project-body {
-            padding: 24px;
-            display: flex;
-            flex-direction: column;
-            flex-grow: 1;
-        }
-
-        .project-meta {
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            margin-bottom: 12px;
-            font-size: 0.82rem;
-        }
-
-        .project-venue-badge {
-            font-weight: 600;
-            color: var(--accent-blue);
-            background: rgba(2, 132, 199, 0.08);
-            padding: 4px 10px;
-            border-radius: 6px;
-        }
-
-        .project-title {
-            font-size: 1.3rem;
-            font-weight: 700;
-            color: var(--text-primary);
-            line-height: 1.35;
-            margin-bottom: 10px;
-            letter-spacing: -0.015em;
-        }
-
-        .project-summary {
-            font-size: 0.95rem;
-            color: var(--text-secondary);
-            line-height: 1.6;
-            margin-bottom: 14px;
-            flex-grow: 1;
-        }
-
-        .project-math-highlight {
-            background: var(--tag-bg);
-            border-left: 3px solid var(--accent-blue);
-            padding: 9px 14px;
-            border-radius: 0 6px 6px 0;
-            font-size: 0.88rem;
-            color: var(--tag-text);
-            margin-bottom: 18px;
-            overflow-x: auto;
-        }
-
-        .project-actions {
-            display: flex;
-            flex-wrap: wrap;
-            gap: 12px;
-            padding-top: 16px;
-            border-top: 1px solid var(--border-subtle);
-        }
-
-        .action-link {
-            font-size: 0.86rem;
-            font-weight: 600;
-            color: var(--accent-blue);
-            text-decoration: none;
-            display: inline-flex;
-            align-items: center;
-            gap: 4px;
-        }
-
-        .action-link:hover {
+        .item-links a:hover {
             text-decoration: underline;
         }
 
-        /* Lightbox Modal */
+        /* Modal Lightbox */
         .modal {
             display: none;
             position: fixed;
@@ -419,8 +412,8 @@
             top: 0;
             width: 100%;
             height: 100%;
-            background: rgba(0, 0, 0, 0.88);
-            backdrop-filter: blur(10px);
+            background-color: rgba(0, 0, 0, 0.88);
+            backdrop-filter: blur(5px);
             align-items: center;
             justify-content: center;
             padding: 24px;
@@ -428,491 +421,294 @@
 
         .modal-content {
             max-width: 92%;
-            max-height: 88%;
+            max-height: 88vh;
             border-radius: 8px;
-            box-shadow: 0 10px 45px rgba(0,0,0,0.6);
-            object-fit: contain;
-        }
-
-        .modal-caption {
-            position: absolute;
-            bottom: 24px;
-            color: #ffffff;
-            font-size: 0.95rem;
-            text-align: center;
-            background: rgba(0, 0, 0, 0.7);
-            padding: 8px 20px;
-            border-radius: 20px;
-            backdrop-filter: blur(6px);
+            box-shadow: 0 10px 40px rgba(0,0,0,0.6);
         }
 
         .modal-close {
             position: absolute;
-            top: 24px;
-            right: 32px;
+            top: 20px;
+            right: 28px;
             color: #ffffff;
-            font-size: 34px;
-            font-weight: bold;
+            font-size: 32px;
             cursor: pointer;
-            transition: transform 0.2s ease;
-        }
-
-        .modal-close:hover {
-            transform: scale(1.15);
-        }
-
-        /* CV Resume Cards */
-        .cv-grid {
-            display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
-            gap: 24px;
-            margin: 24px 0 65px 0;
-        }
-
-        .cv-card {
-            background: var(--bg-card);
-            border: 1px solid var(--border-light);
-            border-radius: 14px;
-            padding: 28px;
-            box-shadow: var(--card-shadow);
-        }
-
-        .cv-card h3 {
-            font-size: 1.2rem;
-            margin-bottom: 8px;
-            color: var(--text-primary);
-        }
-
-        .cv-card p {
-            font-size: 0.94rem;
-            color: var(--text-secondary);
-            margin-bottom: 20px;
-            line-height: 1.55;
         }
 
         /* Footer */
-        footer.site-footer {
-            border-top: 1px solid var(--border-light);
-            padding: 45px 0;
-            font-size: 0.92rem;
-            color: var(--text-tertiary);
-        }
-
-        .footer-inner {
+        .footer {
+            margin-top: 64px;
+            padding-top: 24px;
+            border-top: 1px solid var(--border-subtle);
+            font-size: 0.9rem;
+            color: var(--text-faint);
             display: flex;
             justify-content: space-between;
+            align-items: center;
             flex-wrap: wrap;
-            gap: 20px;
+            gap: 12px;
         }
 
         .footer-links a {
-            color: var(--text-secondary);
+            color: var(--text-muted);
             text-decoration: none;
-            margin-right: 18px;
-            font-weight: 500;
+            margin-left: 14px;
         }
 
         .footer-links a:hover {
-            color: var(--accent-blue);
+            color: var(--accent);
         }
     </style>
 </head>
 <body>
 
-    <header class="site-header">
-        <div class="container nav-inner">
-            <a href="#" class="nav-brand">Kartikeya Gangwar</a>
-            <nav class="nav-links">
-                <a href="#research">Research</a>
-                <a href="#documents">CV & Resume</a>
-                <a href="#contact">Contact</a>
-            </nav>
-        </div>
-    </header>
-
     <div class="container">
+        <!-- Top Nav -->
+        <nav class="top-nav">
+            <a href="#" class="nav-name">Kartikeya Gangwar</a>
+            <div class="nav-right">
+                <div class="nav-links">
+                    <a href="#about">About</a>
+                    <a href="#research">Research</a>
+                    <a href="#notes">Field Notes</a>
+                    <a href="#contact">Contact</a>
+                </div>
+                <button class="theme-toggle-btn" onclick="toggleTheme()" id="themeBtn">Dark</button>
+            </div>
+        </nav>
+
         <!-- Hero Section -->
-        <section class="hero">
-            <h1 class="hero-title">Kartikeya Gangwar</h1>
-            <p class="hero-subtitle">
-                Computational Mathematician & Scientific AI Researcher developing physics-informed neural architectures, symplectic dynamical systems, and bare-metal high-performance PDE solvers.
+        <header class="hero">
+            <h1>Kartikeya Gangwar</h1>
+            <div class="hero-meta">
+                Undergraduate Researcher in Mathematics &bull; University of Delhi &bull; <em>Official records: Kartikey Singh</em>
+            </div>
+            <p class="hero-lead">
+                I study mathematics and build computational engines. I am interested in what happens when exact geometry meets machine learning: symplectic mechanics, infinite-dimensional operator conditioning, and bare-metal scientific computing.
             </p>
-            <div class="hero-affiliation">
-                Department of Mathematics, University of Delhi &bull; Advised by Prof. Vinay Kumar
+            <div class="hero-actions">
+                <a href="Kartikeya_cv.pdf" class="btn-pill btn-primary" target="_blank">Academic CV (PDF)</a>
+                <a href="Kartikeya_Resume.pdf" class="btn-pill btn-outline" target="_blank">Industry Resume (PDF)</a>
+                <a href="https://github.com/KartikeyaGangwar" class="btn-pill btn-outline" target="_blank">GitHub</a>
+                <a href="https://orcid.org/0009-0009-1973-7532" class="btn-pill btn-outline" target="_blank">ORCID</a>
+                <a href="mailto:kartikeysingh525@protonmail.com" class="btn-pill btn-outline">Email</a>
             </div>
-            <div style="margin-top: 6px; font-size: 0.9rem; color: var(--text-tertiary);">
-                Official / Academic Documents: Kartikey Singh &bull; ORCID: <a href="https://orcid.org/0009-0009-1973-7532" target="_blank" style="color: var(--accent-blue); text-decoration: none;">0009-0009-1973-7532</a>
-            </div>
-            <div class="hero-links">
-                <a href="Kartikeya_cv.pdf" class="btn btn-primary" target="_blank">Download Academic CV (PDF)</a>
-                <a href="Kartikeya_Resume.pdf" class="btn btn-secondary" target="_blank">Download Industry Resume (PDF)</a>
-                <a href="https://github.com/KartikeyaGangwar" class="btn btn-secondary" target="_blank">GitHub Profile</a>
-                <a href="https://orcid.org/0009-0009-1973-7532" class="btn btn-secondary" target="_blank">ORCID</a>
-                <a href="https://www.linkedin.com/in/kartikey-singh-2a3434329/" class="btn btn-secondary" target="_blank">LinkedIn</a>
-            </div>
-        </section>
+        </header>
 
-        <!-- Projects & Research Showcase -->
-        <section id="research">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">Flagship Research Projects & Simulations</h2>
-                    <p class="section-desc">Interactive showcase of 10 computational physics frameworks, neural operators, and high-performance solvers.</p>
-                </div>
-            </div>
-
-            <!-- Filter Tabs -->
-            <div class="filter-tabs">
-                <button class="tab-btn active" onclick="filterProjects('all')">All Projects</button>
-                <button class="tab-btn" onclick="filterProjects('inverse')">Inverse Problems (EIT)</button>
-                <button class="tab-btn" onclick="filterProjects('sciml')">Physics-Informed ML</button>
-                <button class="tab-btn" onclick="filterProjects('fluids')">Fluid Dynamics & HPC</button>
-                <button class="tab-btn" onclick="filterProjects('stochastic')">Stochastic & Quant</button>
-                <button class="tab-btn" onclick="filterProjects('systems')">Real-Time Systems</button>
+        <!-- About / Monologue -->
+        <section class="section" id="about">
+            <h2 class="section-heading">The Backbencher's Monologue</h2>
+            <div class="prose">
+                <p>
+                    I didn’t enter research to build a conventional academic career or gather prestige badges. When I moved from my village to Delhi for college, I found the standard lecture hall routine hollow—chasing marks, memorizing proofs for exams, and attending classes just to meet attendance thresholds felt disconnected from reality. 
+                </p>
+                <p>
+                    So I carved out my own path. I sat on the backbench, used modern AI as an intense self-directed learning partner and sounding board, and threw myself into the heaviest, nastiest problems I could find. Over the past year, that self-directed curiosity compounded into <strong>10 independent research frameworks</strong> across inverse problems, fluid mechanics, and symplectic dynamical systems.
+                </p>
+                <p>
+                    My life is not divided into neat corporate compartments. To me, driving a tractor through wet soil in my village, sketching lines and shadows with a pencil on paper, sweating through 100 midnight burpees, and deriving a 64-dimensional Jacobian-vector product in PyTorch are all driven by the exact same instinct: <strong>to build genuine, undeniable capability.</strong>
+                </p>
             </div>
 
-            <!-- Project Cards Grid -->
-            <div class="projects-grid">
-
-                <!-- 1. EIT Inverse Problem (Curated from Refined Repo fig4A) -->
-                <div class="project-card" data-category="inverse sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/eit_reconstruction.png', 'EIT Shape Inversion: Zero-FEM Reconstruction Gallery Across Target Shapes (IEEE TCI)')">
-                        <img src="assets/images/eit_reconstruction.png" alt="EIT Zero-FEM Shape Inversion" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Under Review at IEEE TCI</span>
-                            <span>Inverse Problems</span>
-                        </div>
-                        <h3 class="project-title">Deep Shape Inversion in Electrical Impedance Tomography</h3>
-                        <p class="project-summary">
-                            Resolves the logarithmic ill-posedness of the continuous Calderón problem via stochastic directional Jacobian-Vector Product (JVP) supervision on $\mathbb{S}^{63}$. Delivers a $56.8\times$ wall-clock speedup ($35.6\,\mathrm{ms}$ vs $2.02\,\mathrm{s}$/step) with bounded $342.8\,\mathrm{MB}$ VRAM and $99.57\%$ noise robustness.
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Analytic Sensitivity:</strong> $\mathbf{J}_{\mathrm{FEM}} = \mathbf{J}_\sigma \frac{\partial \boldsymbol{\Sigma}}{\partial \boldsymbol{\theta}}, \quad \mathbf{J}_\sigma \mathbf{v} \in \mathbb{S}^{63}$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.22096368" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22096368 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/eit-neural-surrogate-inversion" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
+            <!-- 4 Anchors Grid -->
+            <div class="vignettes-grid">
+                <div class="vignette-card">
+                    <span class="vignette-icon">🚜</span>
+                    <h3>The Soil & Machines</h3>
+                    <p>Farming in my village and working with tractors grounds me. Physical reality has no patience for academic hand-waving—machines either work or they don’t.</p>
                 </div>
-
-                <!-- 2. CPA-SHNN (Curated comparison figure) -->
-                <div class="project-card" data-category="sciml systems">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/cpa_shnn_celestial.png', 'CPA-SHNN: Chaotic Binary Quasar Orbital Comparison Against Ground Truth & Non-Symplectic Baselines')">
-                        <img src="assets/images/cpa_shnn_celestial.png" alt="CPA-SHNN Celestial Dynamics" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Target: Astronomy & Computing / MNRAS</span>
-                            <span>Astrodynamics</span>
-                        </div>
-                        <h3 class="project-title">CPA-SHNN: Symplectic Celestial Neural Networks</h3>
-                        <p class="project-summary">
-                            Proves exact separable Kinetic-Coriolis Hamiltonian splitting ($\nabla_{\mathbf{z}} \cdot \mathbf{f}_\theta \equiv 0$) and Arnold extended contact phase spaces ($\mathcal{K}_\theta \equiv 0$) across 6 chaotic celestial systems (Binary Quasars, Sitnikov 5-body, CR3BP). Multi-scale Fourier features yield a $126.4\times$ error collapse on gravitational saddle points.
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Invariant:</strong> Symplectic 2-Form Conservation $\omega(t) = \sum_{i=1}^n dq^i(t) \wedge dp_i(t) \equiv \omega(0)$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/KartikeyaGangwar/cpa-shnn" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
+                <div class="vignette-card">
+                    <span class="vignette-icon">✏️</span>
+                    <h3>Pencil & Sketching</h3>
+                    <p>Before parameterizing closed B-splines or differential forms, I sketch. Drawing trained my eyes to understand continuous curvature, contours, and spatial balance.</p>
                 </div>
-
-                <!-- 3. FLUID DYN PINN -->
-                <div class="project-card" data-category="fluids sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/fluid_flow_topologies.png', 'Fluid Dynamics: Streamlines, Vorticity Contours & Pressure Field Comparison at Re=1000')">
-                        <img src="assets/images/fluid_flow_topologies.png" alt="Fluid PINN Flow Topologies" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Under Review: Physics of Fluids</span>
-                            <span>Fluid Mechanics</span>
-                        </div>
-                        <h3 class="project-title">High-Re Incompressible Flow: PINN Operator Conditioning</h3>
-                        <p class="project-summary">
-                            Identifies operator diffusion and false convergence in continuous $\psi-\omega$ PINNs caused by lack of discrete spatial stencils for Thom's wall-vorticity formula. Formulates hard-constrained $\psi-p$ Helmholtz-Hodge projection, accurately capturing secondary corner eddies at $Re=1000$ validated against Ghia (1982). <strong>[MS #POF26-AR-14856]</strong>
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Hard Constraint:</strong> $\nabla \cdot \mathbf{u} = \frac{\partial^2 \psi}{\partial x \partial y} - \frac{\partial^2 \psi}{\partial y \partial x} \equiv 0$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.22979276" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22979276 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/pinn-fluid-formulations" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
+                <div class="vignette-card">
+                    <span class="vignette-icon">⚡</span>
+                    <h3>Physical Discipline</h3>
+                    <p>Midnight running and 100 burpees. A sharp, fearless mind cannot live inside a soft, fragile body. Physical conditioning keeps my thinking resilient.</p>
                 </div>
-
-                <!-- 4. AS-PINN AMR (Helmholtz wave-packet partition) -->
-                <div class="project-card" data-category="sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/as_pinn_amr.png', 'AS-PINN: High-Frequency Helmholtz Solution Fields & Parameter-Space AMR Subspace Territories')">
-                        <img src="assets/images/as_pinn_amr.png" alt="AS-PINN Helmholtz Wave AMR" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Target: SIAM J. Sci. Comput. (SISC)</span>
-                            <span>Parameter AMR</span>
-                        </div>
-                        <h3 class="project-title">AS-PINN: Autonomous Parameter-Space AMR</h3>
-                        <p class="project-summary">
-                            Autonomous domain decomposition engine using vectorized per-sample Gram alignment profiling (`torch.func.vmap`) with exact zero-disruption cleavage invariance ($\|u^{(N+1)} - u^{(N)}\| = 0$). Verified across 9 canonical PDEs, achieving a $725.6\times$ loss reduction over standard PINNs on high-frequency Helmholtz ($k=4\pi$).
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Invariance:</strong> $\|u^{(N+1)}(\mathbf{x}) - u^{(N)}(\mathbf{x})\|_{L^2} = 0 \implies \mathcal{L}(\theta^{(N+1)}) = \mathcal{L}(\theta^{(N)})$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.22822521" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22822521 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
+                <div class="vignette-card">
+                    <span class="vignette-icon">📐</span>
+                    <h3>Exact Invariants</h3>
+                    <p>I don’t trust black-box heuristics. My research enforces structural mathematical invariants: exact symplectic 2-forms, Hodge projections, and analytic sensitivities.</p>
                 </div>
-
-                <!-- 5. 50D Black-Scholes -->
-                <div class="project-card" data-category="stochastic sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/black_scholes_surface.png', 'Deep-EEP-PINN: 3D American Option Free-Boundary Price Surface with Early Exercise Boundary')">
-                        <img src="assets/images/black_scholes_surface.png" alt="Black-Scholes 3D Surface" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Target: J. Computational Finance</span>
-                            <span>Quant PDEs</span>
-                        </div>
-                        <h3 class="project-title">Deep-EEP-PINN: 50D American Basket Option Pricing</h3>
-                        <p class="project-summary">
-                            Prices correlated American basket options up to $d=50$ assets (1,225 correlations) by embedding the analytical Kim/CJM Early Exercise Premium decomposition. Directional autograd trace contraction computes high-dimensional diffusion in $\mathcal{O}(d)$ linear complexity ($<3\,\mathrm{GB}$ VRAM), validated against 100K-path Longstaff-Schwartz Monte Carlo.
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Complexity:</strong> Directional Autograd Trace $\mathrm{Tr}(\boldsymbol{\Sigma} \mathbf{S} \nabla^2 V \mathbf{S} \boldsymbol{\Sigma}^T) \in \mathcal{O}(d)$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/KartikeyaGangwar/Deep-EEP-PINN" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 6. Null-Space RPS (C-Shape Electromagnet Inverse Design) -->
-                <div class="project-card" data-category="sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/null_space_rps.png', 'Null-Space RPS: C-Shape Electromagnet Inverse Design & Direct-Sum Subspace Orthogonality')">
-                        <img src="assets/images/null_space_rps.png" alt="Null-Space RPS Electromagnet" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge" style="background: rgba(16, 185, 129, 0.1); color: #059669;">Under Review: CMAME (Elsevier)</span>
-                            <span>Optimization</span>
-                        </div>
-                        <h3 class="project-title">Parameter Decoupling & Interface Transmission in PINNs</h3>
-                        <p class="project-summary">
-                            Decomposes parameter manifolds into orthogonal direct-sum subspaces ($\Theta_0 \oplus \Theta_1$ with $\mathcal{W}_0 \mathcal{W}_1^T = \mathbf{0}$) coupled via a $C^2$ Quintic Hermite seam operator ($\psi(\xi) = 6\xi^5 - 15\xi^4 + 10\xi^3$). Formally proves structural gradient orthogonality ($\langle \nabla\mathcal{L}_{\mathrm{if}}, \nabla\mathcal{L}_{\mathrm{des}} \rangle \equiv 0$) on saturated domains. Evaluated across 10 matched-capacity models on 3D Linear Paul Ion Traps. <strong>[MS #CMAME-D-26-05120]</strong>
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Orthogonality:</strong> $\Theta = \Theta_0 \oplus \Theta_1 \implies \langle \mathbf{g}_{\mathrm{if}}, \mathbf{g}_{\mathrm{des}} \rangle \equiv 0$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.22132799" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22132799 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/null-space-pinn" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 7. AS-ViT Multi-Task (Real NYUv2 Predictions) -->
-                <div class="project-card" data-category="sciml">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/as_vit_multitask.png', 'AS-ViT: Real NYUv2 Visual Predictions for Depth, Surface Normals, Segmentation & Edges')">
-                        <img src="assets/images/as_vit_multitask.png" alt="AS-ViT Real NYUv2 Predictions" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Target: IEEE TPAMI / CVPR</span>
-                            <span>Computer Vision</span>
-                        </div>
-                        <h3 class="project-title">AS-ViT: Adaptive Subspace Vision Transformers</h3>
-                        <p class="project-summary">
-                            Eliminates destructive negative transfer in dense multi-task vision backbones (depth, surface normals, segmentation, boundaries) by monitoring inter-task Gram matrix negative eigenvalues ($\lambda_{\min}(\mathcal{G}) < -\tau$) and dynamically routing latent expert subspaces using Partition of Unity (PoU) gating ($+5.84\%$ mean gain on NYUv2).
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Clash Routing:</strong> $\lambda_{\min}(\mathcal{G}) < -\tau_{\mathrm{conflict}} \implies \text{Cleave Dedicated Subspace}$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.22974130" target="_blank" class="action-link">Preprint DOI: 10.5281/zenodo.22974130 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 8. Bayesian PINN UQ (Two-Chain Master Dashboard) -->
-                <div class="project-card" data-category="stochastic inverse">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/bayesian_uq_w1.png', 'Bayesian UQ: Two-Chain Master Dashboard Showing MCMC Posterior Chains & 1-Wasserstein Trajectories')">
-                        <img src="assets/images/bayesian_uq_w1.png" alt="Bayesian PINN UQ Dashboard" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Target: Reliability Eng. & System Safety</span>
-                            <span>Uncertainty UQ</span>
-                        </div>
-                        <h3 class="project-title">Bayesian PINN Fidelity & BFR Error Metric</h3>
-                        <p class="project-summary">
-                            Formally investigates how neural surrogate approximation errors distort Bayesian inverse posteriors. Formulates the Bayesian Fidelity Ratio (BFR) based on the Kantorovich-Rubinstein 1-Wasserstein optimal transport distance normalized by empirical MCMC stochastic noise floors.
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Diagnostic Metric:</strong> $\mathrm{BFR} = \frac{\mathcal{W}_1(\pi_{\mathrm{PINN}}, \pi_{\mathrm{MCMC}})}{\sigma_{\mathrm{MCMC}}^{\mathrm{noise}}}$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://github.com/KartikeyaGangwar/PINN-Bayesian-Posterior-Fidelity" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 9. 2D NS FDM Solver (Centerline Validation) -->
-                <div class="project-card" data-category="fluids systems">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/cfd_fdm_cavity.png', '2D Navier-Stokes FDM: Centerline Velocity Validation against Spectral Benchmark of Ghia 1982')">
-                        <img src="assets/images/cfd_fdm_cavity.png" alt="CFD FDM Solver Validation" loading="lazy">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">HPC Open-Source &bull; DOI: 10.5281/zenodo.18312938</span>
-                            <span>CFD / HPC</span>
-                        </div>
-                        <h3 class="project-title">High-Performance 2D Navier-Stokes FDM Solver</h3>
-                        <p class="project-summary">
-                            High-resolution 2D incompressible fluid solver on dense $251 \times 251$ grids ($Re=1000$). Peaceman-Rachford ADI vorticity solver + Red-Black SOR Chebyshev acceleration ($\omega=1.80$) breaking loop dependencies into bipartite sublattices, achieving a $31.9\times$ iteration drop validated against Ghia (1982).
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Spectral Convergence:</strong> $\rho_{\mathrm{SOR}} = \omega_{\mathrm{opt}} - 1 \approx 0.9754 \implies 548 \text{ iterations}$
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.18312938" target="_blank" class="action-link">Zenodo DOI: 10.5281/zenodo.18312938 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/Lid-Driven-Cavity-FDM-Solver" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- 10. BRSDK -->
-                <div class="project-card" data-category="systems">
-                    <div class="project-thumb" onclick="openLightbox('assets/images/brsdk_architecture.svg', 'BRSDK: Near-Zero Allocation 2000Hz Telemetry Architecture in BeamNG.tech')">
-                        <img src="assets/images/brsdk_architecture.svg" alt="BRSDK Architecture Banner" loading="lazy" style="padding: 18px; background: #ffffff;">
-                        <span class="thumb-zoom-badge">Click to enlarge</span>
-                    </div>
-                    <div class="project-body">
-                        <div class="project-meta">
-                            <span class="project-venue-badge">Autonomous Simulation &bull; DOI: 10.5281/zenodo.21729606</span>
-                            <span>Robotics / Simulation</span>
-                        </div>
-                        <h3 class="project-title">BeamNG Research SDK (BRSDK)</h3>
-                        <p class="project-summary">
-                            Deterministic real-time telemetry extraction framework operating inside the 2000Hz Vehicle Lua physics thread of BeamNG.tech. Features static pre-allocated ring buffers, zero dynamic heap allocations on the hot path (0 bytes/s GC allocations), and RFC 8259 JSON metadata sidecars.
-                        </p>
-                        <div class="project-math-highlight">
-                            <strong>Throughput:</strong> Zero-Allocation Hot Path at 2000Hz Physics Sub-stepping
-                        </div>
-                        <div class="project-actions">
-                            <a href="https://doi.org/10.5281/zenodo.21729606" target="_blank" class="action-link">Zenodo DOI: 10.5281/zenodo.21729606 &rarr;</a>
-                            <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank" class="action-link">GitHub Codebase &rarr;</a>
-                        </div>
-                    </div>
-                </div>
-
             </div>
         </section>
 
-        <!-- CV & Documents Download -->
-        <section id="documents">
-            <div class="section-header">
-                <div>
-                    <h2 class="section-title">Curriculum Vitae & Industry Resume</h2>
-                    <p class="section-desc">Download complete documentation of publications, mathematical formulations, and engineering toolchains.</p>
-                </div>
-            </div>
+        <!-- Flagship Research & Systems -->
+        <section class="section" id="research">
+            <h2 class="section-heading">Flagship Research & Systems</h2>
 
-            <div class="cv-grid">
-                <div class="cv-card">
-                    <h3>Academic Curriculum Vitae</h3>
-                    <p>Comprehensive 4-page academic CV detailing research profile, manuscripts under review, mathematical formulation breakdowns, and supervisor details.</p>
-                    <a href="Kartikeya_cv.pdf" class="btn btn-primary" target="_blank">Download Academic CV (PDF)</a>
+            <!-- 1. EIT -->
+            <article class="research-item">
+                <span class="item-status status-review">Under Review &bull; IEEE Transactions on Computational Imaging</span>
+                <h3>Derivative-Informed Neural Forward Surrogates for EIT Shape Inversion</h3>
+                <p class="desc">
+                    Resolves the severe ill-posedness of the continuous Calderón problem in Electrical Impedance Tomography (EIT). Formulates a 64-dimensional periodic cubic B-spline with stochastic directional Jacobian-Vector Product (JVP) supervision on $\mathbb{S}^{63}$, reducing retained autograd branches from 64 to 1 per sample. Replaces online FEM solves entirely ($N_{\mathrm{FEM}}^{\mathrm{online}} = 0$) to achieve a <strong>$56.8\times$ wall-clock speedup</strong> ($35.6\,\mathrm{ms}$ vs $2.02\,\mathrm{s}$/step) with bounded $342.8\,\mathrm{MB}$ VRAM and $99.57\%$ noise robustness across a 234-trial benchmark.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/eit_reconstruction.png')">
+                    <img src="assets/images/eit_reconstruction.png" alt="EIT Zero-Online-FEM Inversion Benchmark" loading="lazy">
                 </div>
-                <div class="cv-card">
-                    <h3>Industry & Systems Resume</h3>
-                    <p>Concise 2-page industry-tailored resume emphasizing high-performance scientific computing, deep autograd engineering, and production codebases.</p>
-                    <a href="Kartikeya_Resume.pdf" class="btn btn-secondary" target="_blank">Download Industry Resume (PDF)</a>
+                <div class="math-box">
+                    $\mathbf{J}_{\mathrm{FEM}} = \mathbf{J}_\sigma \frac{\partial \boldsymbol{\Sigma}}{\partial \boldsymbol{\theta}}, \quad \mathbb{E}_{\mathbf{v} \sim \mathbb{S}^{63}} \left[ \|\mathbf{J}_{\mathrm{surr}}\mathbf{v} - \mathbf{J}_{\mathrm{FEM}}\mathbf{v}\|_2^2 \right] \propto \|\mathbf{J}_{\mathrm{surr}} - \mathbf{J}_{\mathrm{FEM}}\|_F^2$
                 </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.22096368" target="_blank">Preprint DOI: 10.5281/zenodo.22096368 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/eit-neural-surrogate-inversion" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 2. Physics of Fluids -->
+            <article class="research-item">
+                <span class="item-status status-review">Under Review &bull; Physics of Fluids (AIP Publishing) [MS #POF26-AR-14856]</span>
+                <h3>Operator Conditioning and False Convergence in Incompressible PINNs</h3>
+                <p class="desc">
+                    Controlled regularized lid-driven cavity study ($Re=1000$). Proved that continuous mesh-free PINNs lack discrete stencils for Thom's wall-vorticity condition, causing <strong>False Convergence and Operator Diffusion</strong> in streamfunction-vorticity ($\psi$--$\omega$) models ($67.3\times$ residual drop while underpredicting secondary corner eddies by $14.3\%$). Proved that retaining pressure $p$ in $\psi$--$p$ enforces an implicit elliptic Helmholtz–Hodge projection, restoring operator conditioning ($14.2\%$ vs $2.8\%$ global velocity $L_2$ error).
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/fluid_flow_topologies.png')">
+                    <img src="assets/images/fluid_flow_topologies.png" alt="Operator conditioning and false convergence in fluid PINNs" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.22979276" target="_blank">Preprint DOI: 10.5281/zenodo.22979276 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/pinn-fluid-formulations" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 3. High-Re Cavity AMM -->
+            <article class="research-item">
+                <span class="item-status status-review">Under Review &bull; Applied Mathematical Modelling (Elsevier)</span>
+                <h3>High-Resolution Finite-Difference Framework up to Re = 100,000</h3>
+                <p class="desc">
+                    Engineered an exact $\mathcal{O}(N^2 \log N)$ Discrete Sine Transform (DST-I) Poisson engine with vectorized ADI marching on $1025 \times 1025$ grids ($1.05\mathrm{M}$ nodes), eliminating iterative Poisson drift. Preserved pure central differencing ($\nu_{\mathrm{art}} = 0$) up to $Re = 50,000$, verified Batchelor's core theorem and ASME V&V 20 Richardson GCI ($0.48\%$), and resolved unsteady vortex shedding ($St = 0.6249$) up to $Re = 100,000$.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/cfd_fdm_cavity.png')">
+                    <img src="assets/images/cfd_fdm_cavity.png" alt="High-Re Lid Driven Cavity CFD up to 100,000" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.18312938" target="_blank">Datasets & Preprint DOI: 10.5281/zenodo.18312938 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/lid-driven-cavity-cfd" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 4. CPA-SHNN -->
+            <article class="research-item">
+                <span class="item-status status-working">Working Paper &bull; Target: Astronomy & Computing</span>
+                <h3>CPA-SHNN: Symplectic Neural Networks for Multi-Body Gravitational Dynamics</h3>
+                <p class="desc">
+                    Joint work with Prof. Vinay Kumar. Proved separable symplectic kinetic-Coriolis splitting and Arnold extended contact phase space formulations ($\mathbf{Z}_{\mathrm{ext}} = (\mathbf{q}, t, \mathbf{p}, p_t)$) across 6 chaotic gravitational systems (Binary Quasars, Restricted 6-Body, Sitnikov 5-Body), preserving energy to machine precision ($\Delta\mathcal{H} \le 10^{-4}\%$). Multi-scale Fourier features achieved up to a $126.40\times$ error collapse on gravitational saddle singularities.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/cpa_shnn_celestial.png')">
+                    <img src="assets/images/cpa_shnn_celestial.png" alt="Symplectic Hamiltonian Neural Networks for Astrodynamics" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/cpa-shnn" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 5. AS Trilogy -->
+            <article class="research-item">
+                <span class="item-status status-working">The Adaptive Subspace (AS) Optimization Trilogy</span>
+                <h3>Resolving Parameter Gradient Interference via Orthogonal Subspaces</h3>
+                <p class="desc">
+                    A three-act architectural lineage: (1) <strong>null-space-pinn:</strong> Orthogonal direct-sum parameter splitting ($\Theta = \Theta_0 \oplus \Theta_1$) with a $C^2$ Quintic Hermite seam operator, proving exact gradient orthogonality. (2) <strong>as-pinn:</strong> Autonomous parameter-space AMR via vectorized per-sample Gram alignment profiling (`torch.func.vmap`), delivering $725.6\times$ loss reduction on high-frequency Helmholtz. (3) <strong>as-vit-multitask:</strong> Dynamic latent expert routing via Gram matrix negative eigenvalue tracking.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/as_pinn_amr.png')">
+                    <img src="assets/images/as_pinn_amr.png" alt="Adaptive Subspace Parameter Mesh Refinement" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/null-space-pinn" target="_blank">null-space-pinn &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank">as-pinn &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank">as-vit-multitask &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 6. Deep-EEP & BRSDK -->
+            <article class="research-item">
+                <span class="item-status status-working">Stochastic Control & Scientific Infrastructure</span>
+                <h3>High-Dimensional Free-Boundary Options & 2,000 Hz Soft-Body Physics</h3>
+                <p class="desc">
+                    <strong>Deep-EEP-PINN:</strong> Priced 50-dimensional American basket options (1,225 correlations) breaking Bellman’s curse of dimensionality via Directional Autograd Hessian Trace Contraction in $\mathcal{O}(d)$ linear complexity ($<3\,\mathrm{GB}$ VRAM).<br>
+                    <strong>BRSDK (v2.0.0):</strong> High-frequency telemetry extraction framework operating in BeamNG's 2,000 Hz vehicle physics thread with zero dynamic Lua heap allocations, Apache Arrow columnar storage, and zero-copy DLPack PyTorch interchange.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/black_scholes_surface.png')">
+                    <img src="assets/images/black_scholes_surface.png" alt="American Basket Options Free Boundary Surface" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/Deep-EEP-PINN" target="_blank">Deep-EEP-PINN Code &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank">BRSDK Codebase &rarr;</a>
+                </div>
+            </article>
+        </section>
+
+        <!-- Field Notes / Philosophy -->
+        <section class="section" id="notes">
+            <h2 class="section-heading">Field Notes & The Latent Manifold</h2>
+            <div class="prose">
+                <p>
+                    <strong>On Capability vs. Credentials:</strong> In computational mathematics and engineering, code and theorems are honest. A simulation either diverges or it conserves energy; an autodiff graph either blows up VRAM or it runs in 35 milliseconds. Credentials, recommendation letters, and titles are social artifacts. Capability is an absolute invariant.
+                </p>
+                <p>
+                    <strong>On the Rhythm of Hard Work:</strong> When working on difficult mathematical derivations, hitting a wall is guaranteed. My answer is to step away from screens—go back to my village, work in the fields, drive the tractor, or run until my lungs burn. When the physical body is exhausted and grounded in real dirt, mental knots untangle naturally.
+                </p>
+                <p>
+                    <strong>On Open Science:</strong> I have zero interest in secretive research or hoarding scripts until an acceptance email arrives. Every pipeline I formulate is released openly on GitHub and archived with persistent DOIs on Zenodo. If your work is mathematically sound, you don't fear inspection.
+                </p>
             </div>
         </section>
-    </div>
 
-    <!-- Lightbox Modal -->
-    <div id="lightbox-modal" class="modal" onclick="closeLightbox()">
-        <span class="modal-close">&times;</span>
-        <img class="modal-content" id="modal-img" src="" alt="Zoomed Plot">
-        <div class="modal-caption" id="modal-caption"></div>
-    </div>
-
-    <!-- Footer -->
-    <footer class="site-footer" id="contact">
-        <div class="container footer-inner">
+        <!-- Contact & Footer -->
+        <footer class="footer" id="contact">
             <div>
-                <p><strong>Kartikeya Gangwar</strong></p>
-                <p style="font-size: 0.85rem; color: var(--text-tertiary);">Official / Academic Documents: Kartikey Singh</p>
-                <p>Department of Mathematics, University of Delhi &bull; New Delhi, India</p>
-                <p>Email: <a href="mailto:kartikeysingh525@protonmail.com" style="color: var(--accent-blue);">kartikeysingh525@protonmail.com</a></p>
+                <strong>Kartikeya Gangwar</strong> &bull; Department of Mathematics, University of Delhi<br>
+                Email: <a href="mailto:kartikeysingh525@protonmail.com" style="color: var(--accent); text-decoration: none;">kartikeysingh525@protonmail.com</a>
             </div>
             <div class="footer-links">
+                <a href="Kartikeya_cv.pdf" target="_blank">CV (PDF)</a>
+                <a href="Kartikeya_Resume.pdf" target="_blank">Resume (PDF)</a>
                 <a href="https://github.com/KartikeyaGangwar" target="_blank">GitHub</a>
                 <a href="https://orcid.org/0009-0009-1973-7532" target="_blank">ORCID</a>
-                <a href="https://www.linkedin.com/in/kartikey-singh-2a3434329/" target="_blank">LinkedIn</a>
                 <a href="https://zenodo.org/search?q=metadata.creators.person_or_org.name%3A%22Singh%2C%20Kartikey%22" target="_blank">Zenodo</a>
             </div>
-        </div>
-    </footer>
+        </footer>
+    </div>
 
-    <!-- Interactive Scripts -->
+    <!-- Image Lightbox Modal -->
+    <div id="imageModal" class="modal" onclick="closeModal()">
+        <span class="modal-close">&times;</span>
+        <img class="modal-content" id="modalImg" src="" alt="Enlarged Plot">
+    </div>
+
     <script>
-        function filterProjects(category) {
-            const buttons = document.querySelectorAll('.tab-btn');
-            buttons.forEach(btn => btn.classList.remove('active'));
-            event.target.classList.add('active');
-
-            const cards = document.querySelectorAll('.project-card');
-            cards.forEach(card => {
-                if (category === 'all') {
-                    card.style.display = 'flex';
-                } else {
-                    const categories = card.getAttribute('data-category').split(' ');
-                    if (categories.includes(category)) {
-                        card.style.display = 'flex';
-                    } else {
-                        card.style.display = 'none';
-                    }
-                }
-            });
+        function openModal(imgSrc) {
+            const modal = document.getElementById("imageModal");
+            const modalImg = document.getElementById("modalImg");
+            modal.style.display = "flex";
+            modalImg.src = imgSrc;
         }
 
-        function openLightbox(src, caption) {
-            const modal = document.getElementById('lightbox-modal');
-            const modalImg = document.getElementById('modal-img');
-            const modalCaption = document.getElementById('modal-caption');
-            modal.style.display = 'flex';
-            modalImg.src = src;
-            modalCaption.textContent = caption;
+        function closeModal() {
+            document.getElementById("imageModal").style.display = "none";
         }
 
-        function closeLightbox() {
-            document.getElementById('lightbox-modal').style.display = 'none';
+        // Theme toggle
+        function toggleTheme() {
+            const html = document.documentElement;
+            const currentTheme = html.getAttribute("data-theme");
+            const newTheme = currentTheme === "dark" ? "light" : "dark";
+            html.setAttribute("data-theme", newTheme);
+            document.getElementById("themeBtn").innerText = newTheme === "dark" ? "Light" : "Dark";
+            localStorage.setItem("theme", newTheme);
         }
 
-        document.addEventListener('keydown', function(event) {
-            if (event.key === 'Escape') {
-                closeLightbox();
+        // Init theme
+        (function() {
+            const savedTheme = localStorage.getItem("theme");
+            if (savedTheme) {
+                document.documentElement.setAttribute("data-theme", savedTheme);
+                const btn = document.getElementById("themeBtn");
+                if (btn) btn.innerText = savedTheme === "dark" ? "Light" : "Dark";
             }
-        });
+        })();
     </script>
 </body>
 </html>
