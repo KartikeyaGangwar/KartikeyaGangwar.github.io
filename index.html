@@ -337,6 +337,11 @@
             color: #0284c7;
         }
 
+        .status-engine {
+            background: rgba(147, 51, 234, 0.12);
+            color: #9333ea;
+        }
+
         .research-item h3 {
             font-size: 1.25rem;
             font-weight: 600;
@@ -558,10 +563,10 @@
                 <span class="item-status status-review">Under Review &bull; Applied Mathematical Modelling (Elsevier)</span>
                 <h3>High-Resolution Finite-Difference Framework up to Re = 100,000</h3>
                 <p class="desc">
-                    Engineered an exact $\mathcal{O}(N^2 \log N)$ Discrete Sine Transform (DST-I) Poisson engine with vectorized ADI marching on $1025 \times 1025$ grids ($1.05\mathrm{M}$ nodes), eliminating iterative Poisson drift. Preserved pure central differencing ($\nu_{\mathrm{art}} = 0$) up to $Re = 50,000$, verified Batchelor's core theorem and ASME V&V 20 Richardson GCI ($0.48\%$), and resolved unsteady vortex shedding ($St = 0.6249$) up to $Re = 100,000$.
+                    Engineered an exact $\mathcal{O}(N^2 \log N)$ Discrete Sine Transform (DST-I) Poisson engine with vectorized ADI marching on $1025 \times 1025$ grids ($1.05\mathrm{M}$ nodes), eliminating iterative Poisson drift. Preserved pure central differencing ($\nu_{\mathrm{art}} = 0$) up to $Re = 50,000$, verified Batchelor's core theorem and ASME V&V 20 Richardson GCI ($0.48\%$), and resolved unsteady periodic vortex shedding ($St = 0.6249$) up to $Re = 100,000$.
                 </p>
-                <div class="item-figure-preview" onclick="openModal('assets/images/cfd_fdm_cavity.png')">
-                    <img src="assets/images/cfd_fdm_cavity.png" alt="High-Re Lid Driven Cavity CFD up to 100,000" loading="lazy">
+                <div class="item-figure-preview" onclick="openModal('assets/images/cavity_vortex_shedding_Re100000.gif')">
+                    <img src="assets/images/cavity_vortex_shedding_Re100000.gif" alt="High-Re Lid Driven Cavity Unsteady Vortex Shedding at Re = 100,000" loading="lazy">
                 </div>
                 <div class="item-links">
                     <a href="https://doi.org/10.5281/zenodo.18312938" target="_blank">Datasets & Preprint DOI: 10.5281/zenodo.18312938 &rarr;</a>
@@ -584,37 +589,95 @@
                 </div>
             </article>
 
-            <!-- 5. AS Trilogy -->
+            <!-- 5. AS-PINN -->
             <article class="research-item">
-                <span class="item-status status-working">The Adaptive Subspace (AS) Optimization Trilogy</span>
-                <h3>Resolving Parameter Gradient Interference via Orthogonal Subspaces</h3>
+                <span class="item-status status-working">Working Paper &bull; Target: SIAM J. Scientific Computing (SISC)</span>
+                <h3>AS-PINN: Autonomous Parameter-Space Adaptive Mesh Refinement</h3>
                 <p class="desc">
-                    A three-act architectural lineage: (1) <strong>null-space-pinn:</strong> Orthogonal direct-sum parameter splitting ($\Theta = \Theta_0 \oplus \Theta_1$) with a $C^2$ Quintic Hermite seam operator, proving exact gradient orthogonality. (2) <strong>as-pinn:</strong> Autonomous parameter-space AMR via vectorized per-sample Gram alignment profiling (`torch.func.vmap`), delivering $725.6\times$ loss reduction on high-frequency Helmholtz. (3) <strong>as-vit-multitask:</strong> Dynamic latent expert routing via Gram matrix negative eigenvalue tracking.
+                    Engineered autonomous domain decomposition via vectorized per-sample Gram alignment profiling ($\mathcal{G}_{ij} = \cos \angle(\mathbf{g}_i, \mathbf{g}_j)$ via <code>torch.func.vmap</code>) with exact zero-disruption cleavage invariance ($\|u^{(N+1)} - u^{(N)}\| = 0$). Attained a <strong>$725.6\times$ loss reduction</strong> over standard PINNs, PCGrad, and CAGrad on high-frequency Helmholtz ($k=4\pi$) and singular 2D Klein-Gordon systems.
                 </p>
                 <div class="item-figure-preview" onclick="openModal('assets/images/as_pinn_amr.png')">
                     <img src="assets/images/as_pinn_amr.png" alt="Adaptive Subspace Parameter Mesh Refinement" loading="lazy">
                 </div>
                 <div class="item-links">
-                    <a href="https://github.com/KartikeyaGangwar/null-space-pinn" target="_blank">null-space-pinn &rarr;</a>
-                    <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank">as-pinn &rarr;</a>
-                    <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank">as-vit-multitask &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/as-pinn" target="_blank">GitHub Codebase &rarr;</a>
                 </div>
             </article>
 
-            <!-- 6. Deep-EEP & BRSDK -->
+            <!-- 6. AS-ViT MultiTask -->
             <article class="research-item">
-                <span class="item-status status-working">Stochastic Control & Scientific Infrastructure</span>
-                <h3>High-Dimensional Free-Boundary Options & 2,000 Hz Soft-Body Physics</h3>
+                <span class="item-status status-working">Working Paper &bull; Target: IEEE TPAMI / CVPR</span>
+                <h3>AS-ViT: Dynamic Latent Expert Routing in Multi-Task Vision</h3>
                 <p class="desc">
-                    <strong>Deep-EEP-PINN:</strong> Priced 50-dimensional American basket options (1,225 correlations) breaking Bellman’s curse of dimensionality via Directional Autograd Hessian Trace Contraction in $\mathcal{O}(d)$ linear complexity ($<3\,\mathrm{GB}$ VRAM).<br>
-                    <strong>BRSDK (v2.0.0):</strong> High-frequency telemetry extraction framework operating in BeamNG's 2,000 Hz vehicle physics thread with zero dynamic Lua heap allocations, Apache Arrow columnar storage, and zero-copy DLPack PyTorch interchange.
+                    Resolved multi-task negative transfer in dense vision backbones by tracking inter-task Gram matrix negative eigenvalues ($\lambda_{\min}(\mathcal{G}) < -\tau$). Dynamically cleaves dedicated latent expert subspaces using Partition of Unity (PoU) gating, delivering a <strong>$+5.84\%$ mean multi-task gain</strong> across semantic segmentation, monocular depth estimation, and 3D surface normal prediction on the NYUv2 benchmark.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/as_vit_multitask.png')">
+                    <img src="assets/images/as_vit_multitask.png" alt="Adaptive Subspace Vision Transformer Benchmark on NYUv2" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/as-vit-multitask" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 7. Null-Space PINN -->
+            <article class="research-item">
+                <span class="item-status status-working">Working Paper &bull; Target: Journal of Computational Physics (JCP)</span>
+                <h3>Null-Space PINN: Algebraic Gradient Orthogonality on Boundary Domains</h3>
+                <p class="desc">
+                    Decomposed the neural parameter manifold into orthogonal direct-sum subspaces ($\Theta = \Theta_0 \oplus \Theta_1$, $\mathcal{W}_0 \mathcal{W}_1^\top = \mathbf{0}$) blended via a $C^2$ Quintic Hermite seam operator ($\psi(\xi) = 6\xi^5 - 15\xi^4 + 10\xi^3$). Proved structural gradient orthogonality ($\langle \nabla \mathcal{L}_{\mathrm{if}}, \nabla \mathcal{L}_{\mathrm{des}} \rangle \equiv 0$) on saturated boundary domains, eliminating gradient pathology in stiff reaction-diffusion equations.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/null_space_rps.png')">
+                    <img src="assets/images/null_space_rps.png" alt="Null Space PINN Gradient Orthogonality" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.22132799" target="_blank">Preprint DOI: 10.5281/zenodo.22132799 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/null-space-pinn" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 8. Deep-EEP-PINN -->
+            <article class="research-item">
+                <span class="item-status status-engine">Research Engine &bull; Quantitative Finance</span>
+                <h3>Deep-EEP-PINN: Pricing High-Dimensional American Basket Options</h3>
+                <p class="desc">
+                    Priced correlated American basket options up to <strong>$d = 50$ underlying assets (1,225 correlations)</strong>, breaking Bellman's Curse of Dimensionality ($N^d$) via Directional Autograd Hessian Trace Contraction in $\mathcal{O}(d)$ linear complexity ($< 3\,\mathrm{GB}$ VRAM). Validated against 100,000-path Longstaff–Schwartz Monte Carlo and Crank–Nicolson PSOR with $0.37\%$ relative pricing discrepancy.
                 </p>
                 <div class="item-figure-preview" onclick="openModal('assets/images/black_scholes_surface.png')">
                     <img src="assets/images/black_scholes_surface.png" alt="American Basket Options Free Boundary Surface" loading="lazy">
                 </div>
                 <div class="item-links">
-                    <a href="https://github.com/KartikeyaGangwar/Deep-EEP-PINN" target="_blank">Deep-EEP-PINN Code &rarr;</a>
-                    <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank">BRSDK Codebase &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/Deep-EEP-PINN" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 9. Bayesian PINN Fidelity -->
+            <article class="research-item">
+                <span class="item-status status-engine">Research Engine &bull; Uncertainty Quantification</span>
+                <h3>PINN-Bayesian-Posterior-Fidelity: Surrogate Distortion Diagnostics</h3>
+                <p class="desc">
+                    Diagnostic framework quantifying neural surrogate-induced Bayesian posterior distortion in inverse problem characterization. Formulates the 1-Wasserstein Bayesian Fidelity Ratio ($\mathrm{BFR}$) normalized by empirical MCMC stochastic noise floors, isolating exact spatial regions where PINN approximation errors corrupt epistemic parameter uncertainty.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/bayesian_uq_w1.png')">
+                    <img src="assets/images/bayesian_uq_w1.png" alt="Bayesian Posterior Distortion and Wasserstein Fidelity" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/PINN-Bayesian-Posterior-Fidelity" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 10. BRSDK -->
+            <article class="research-item">
+                <span class="item-status status-engine">Open-Source Framework &bull; Target: JOSS</span>
+                <h3>BRSDK: Real-Time In-Engine Physics Telemetry for Autonomous Vehicles</h3>
+                <p class="desc">
+                    High-frequency telemetry extraction framework operating inside BeamNG's <strong>2,000\,Hz soft-body vehicle physics thread</strong> with zero dynamic Lua heap allocations during logging. Built an Apache Arrow columnar Python SDK with Polars streaming and zero-copy DLPack PyTorch tensor interchange for offline reinforcement learning and state estimation.
+                </p>
+                <div class="item-figure-preview" onclick="openModal('assets/images/brsdk_architecture.svg')">
+                    <img src="assets/images/brsdk_architecture.svg" alt="BRSDK Real-Time Telemetry Architecture" loading="lazy">
+                </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.21729606" target="_blank">Preprint DOI: 10.5281/zenodo.21729606 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank">GitHub Codebase &rarr;</a>
                 </div>
             </article>
         </section>
