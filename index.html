@@ -526,7 +526,23 @@
         <section class="section" id="research">
             <h2 class="section-heading">Flagship Research & Systems</h2>
 
-            <!-- 1. EIT -->
+            <!-- 1. Bayesian Inverse PINN Posterior Fidelity -->
+            <article class="research-item">
+                <span class="item-status status-review">Under Review &bull; Journal of Computational Physics (Elsevier)</span>
+                <h3>Parameter-Space Error Localization and Posterior Fidelity of PINN Surrogates</h3>
+                <p class="desc">
+                    Comprehensive 59-page theoretical and empirical investigation demonstrating that surrogate approximation errors enter Bayesian posteriors strictly through sparse sensor projections and localized likelihood filtering. Proved inverse-noise Total Variation and Wasserstein-1 stability bounds $\mathcal{O}(\sigma_{\mathrm{noise}}^{-2})$, formulated the Bayesian Fidelity Ratio (BFR) screening threshold across a balanced 240-model ensemble, and uncovered an observational projection crossover in 2D Incompressible Navier-Stokes and 5D multi-mode diffusion.
+                </p>
+                <div class="math-box">
+                    $\mathcal{W}_1(\pi, \widehat{\pi}) \le \mathrm{diam}(\Theta) \cdot d_{\mathrm{TV}}(\pi, \widehat{\pi}) \le \frac{\mathrm{diam}(\Theta)}{2}\left[\exp(2R\varepsilon + \varepsilon^2) - 1\right] = \mathcal{O}(\sigma_{\mathrm{noise}}^{-2})$
+                </div>
+                <div class="item-links">
+                    <a href="https://doi.org/10.5281/zenodo.23227155" target="_blank">Preprint DOI: 10.5281/zenodo.23227155 &rarr;</a>
+                    <a href="https://github.com/KartikeyaGangwar/PINN-Bayesian-Posterior-Fidelity" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
+            <!-- 2. EIT -->
             <article class="research-item">
                 <span class="item-status status-review">Under Review &bull; IEEE Transactions on Computational Imaging</span>
                 <h3>Derivative-Informed Neural Forward Surrogates for EIT Shape Inversion</h3>
