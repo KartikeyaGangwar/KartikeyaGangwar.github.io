@@ -526,6 +526,21 @@
         <section class="section" id="research">
             <h2 class="section-heading">Flagship Research & Systems</h2>
 
+            <!-- 0. Contact-SSM -->
+            <article class="research-item">
+                <span class="item-status status-working">Working Paper &bull; Target: NeurIPS / SIMODS</span>
+                <h3>Contact-SSM: Geometric Contact State-Space Models for Time Series</h3>
+                <p class="desc">
+                    Embeds dynamical latent states onto an odd-dimensional contact manifold $\mathbb{R}^{2d+1}$ with contact 1-form $\alpha = \mathrm{d}s - \mathbf{p}^T\mathrm{d}\mathbf{q}$ and Reeb vector field $R = \partial/\partial s$, modeling dissipative and driven dynamical systems without secular phase drift. Integrates the infinitesimal generator $K \in \mathfrak{sp}(2d) \oplus \mathbb{R}$ via Cayley transform into parallel associative prefix scans, achieving $\mathcal{O}(L)$ GPU training and $\mathcal{O}(1)$ real-time streaming rollouts without the quadratic overhead of Transformers.
+                </p>
+                <div class="math-box">
+                    $\alpha = \mathrm{d}s - \mathbf{p}^T\mathrm{d}\mathbf{q}, \quad \iota_{X_{\mathcal{H}}} \alpha = -\mathcal{H}, \quad \iota_{X_{\mathcal{H}}} \mathrm{d}\alpha = \mathrm{d}\mathcal{H} - (R \mathcal{H})\alpha$
+                </div>
+                <div class="item-links">
+                    <a href="https://github.com/KartikeyaGangwar/time-series-forecasting" target="_blank">GitHub Codebase &rarr;</a>
+                </div>
+            </article>
+
             <!-- 1. Bayesian Inverse PINN Posterior Fidelity -->
             <article class="research-item">
                 <span class="item-status status-review">Under Review &bull; Journal of Computational Physics (Elsevier)</span>
@@ -593,12 +608,12 @@
                 </div>
             </article>
 
-            <!-- 4. CPA-SHNN -->
+            <!-- 4. CHRONOS / SymPIN -->
             <article class="research-item">
-                <span class="item-status status-working">Working Paper &bull; Target: Astronomy & Computing</span>
-                <h3>CPA-SHNN: Symplectic Neural Networks for Multi-Body Gravitational Dynamics</h3>
+                <span class="item-status status-working">Working Paper &bull; Target: MNRAS / Astronomy &amp; Computing</span>
+                <h3>CHRONOS: Canonical Hamiltonian Reconstruction via Symplectic Potential Inversion</h3>
                 <p class="desc">
-                    Joint work with Prof. Vinay Kumar. Proved separable symplectic kinetic-Coriolis splitting and Arnold extended contact phase space formulations ($\mathbf{Z}_{\mathrm{ext}} = (\mathbf{q}, t, \mathbf{p}, p_t)$) across 6 chaotic gravitational systems (Binary Quasars, Restricted 6-Body, Sitnikov 5-Body), preserving energy to machine precision ($\Delta\mathcal{H} \le 10^{-4}\%$). Multi-scale Fourier features achieved up to a $126.40\times$ error collapse on gravitational saddle singularities.
+                    Joint work with Prof. Vinay Kumar. Proved Theorem 1 (Separable Kinetic-Coriolis Decomposition), Theorem 2 (Arnold Extended Phase Space $\mathbb{R}^{2d+2}$), and Theorem 3 (Separable Extended Synthesis), preserving Jacobi invariants ($|\Delta\mathcal{I}| &lt; 10^{-1}$) across 7 non-integrable celestial systems. Discovered the Far-Field Oscillatory Ringing Trap and eliminated ripples via Mexican Hat Wavelet Nets ($2.0 \times 10^{11}\times$ cleaner curvature). Built Sundman symplectic steppers resolving KAM tori with &gt;1,100 Poincar&eacute; punctures.
                 </p>
                 <div class="item-figure-preview" onclick="openModal('assets/images/cpa_shnn_3d_potential.png')">
                     <img src="assets/images/cpa_shnn_3d_potential.png" alt="Binary Quasar 3D Gravitational Potential Manifold" loading="lazy">
@@ -699,6 +714,17 @@
                     <a href="https://github.com/KartikeyaGangwar/BRSDK" target="_blank">GitHub Codebase &rarr;</a>
                 </div>
             </article>
+        </section>
+
+        <!-- Academic Service -->
+        <section class="section" id="service">
+            <h2 class="section-heading">Academic Service & Peer Review</h2>
+            <div class="prose">
+                <p>
+                    <strong>Invited Peer Reviewer</strong> &bull; <em>Physics of Fluids</em> (AIP Publishing, 2026).<br>
+                    Official referee evaluating Large-Eddy Simulation (LES) vorticity-transport mechanisms, spectral proper orthogonal decomposition (SPOD), and unsteady asymmetric vortex shedding over slender bodies at high incidence [MS #POF26-AR-13153R].
+                </p>
+            </div>
         </section>
 
         <!-- Open Science -->
