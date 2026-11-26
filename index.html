@@ -528,13 +528,13 @@
 
             <!-- 0. Contact-SSM -->
             <article class="research-item">
-                <span class="item-status status-review">Under Review &bull; Transactions on Machine Learning Research (TMLR)</span>
-                <h3>Contact-SSM: Geometric Contact State-Space Models for Long-Horizon Dynamical Sequence Modeling</h3>
+                <span class="item-status status-working">Preprint &bull; Target: Nonlinearity (IOP / LMS) &amp; ICLR 2027 Workshop</span>
+                <h3>Conformal Contact State-Space Models via Strang Contact-Cayley Splitting</h3>
                 <p class="desc">
-                    Embeds dynamical latent states onto an odd-dimensional contact manifold $\mathbb{R}^{2d+1}$ with contact 1-form $\alpha = \mathrm{d}s - \mathbf{p}^T\mathrm{d}\mathbf{q}$ and Reeb vector field $R = \partial/\partial s$, modeling dissipative and driven dynamical systems without secular phase drift. Formulates continuous infinitesimal generators on $\mathfrak{sp}(2d, \mathbb{R}) \oplus \mathbb{R}$ discretized via Generalized Symplectic Cayley transforms, proving unit-disk spectral stability ($|\lambda| \le 1$), machine-precision symplectic 2-form conservation ($4.44 \times 10^{-16}$), and $\mathcal{O}(\log L)$ parallel associative GPU scans with a $30.6\%$ long-horizon error reduction over standard dissipative SSMs.
+                    Propagates full odd-dimensional contact states $\mathbf{z} = (\mathbf{q}, \mathbf{p}, s) \in \mathbb{R}^{2d+1}$ equipped with contact 1-form $\alpha = \mathrm{d}s - \mathbf{p}^T\mathrm{d}\mathbf{q}$ and Reeb vector field $R = \partial/\partial s$. Discretizes continuous $\mathfrak{sp}(2d, \mathbb{R}) \oplus \mathbb{R}$ generators via symmetric Strang Contact-Cayley Splitting, proving exact conformal contactomorphism ($\mathbf{\Psi}_{\mathrm{Strang}}^*\alpha = e^{-\gamma\Delta t}\alpha$ verified to $2.22 \times 10^{-16}$), symplectic 2-form conservation ($4.44 \times 10^{-16}$), and two-level $\mathcal{O}(\log L)$ block-parallel associative scans ($34.51\times$ wall-clock speedup at $L=4096$). Across 3-seed benchmarks, achieves lowest $W_1 = 0.2128$ on 320-step autonomous Lorenz-96 chaotic rollouts and lowest multi-horizon MSE on ETTh1/ETTh2.
                 </p>
                 <div class="math-box">
-                    $\alpha = \mathrm{d}s - \mathbf{p}^T\mathrm{d}\mathbf{q}, \quad \iota_{X_{\mathcal{H}}} \alpha = -\mathcal{H}, \quad \iota_{X_{\mathcal{H}}} \mathrm{d}\alpha = \mathrm{d}\mathcal{H} - (R \mathcal{H})\alpha, \quad \det(\mathbf{\Phi}) \equiv 1$
+                    $\mathbf{\Psi}_{\mathrm{Strang}} = \mathbf{D}\!\left(\frac{\Delta t}{2}\right) \circ \mathbf{\Psi}_0(\Delta t) \circ \mathbf{D}\!\left(\frac{\Delta t}{2}\right), \quad \mathbf{\Psi}_{\mathrm{Strang}}^*\alpha = e^{-\gamma\Delta t}\alpha, \quad \det(\mathbf{\Phi}_{\mathrm{Strang}}) = e^{-d\gamma\Delta t}$
                 </div>
                 <div class="item-links">
                     <a href="https://doi.org/10.5281/zenodo.24377514" target="_blank">Preprint DOI: 10.5281/zenodo.24377514 &rarr;</a>
@@ -544,10 +544,10 @@
 
             <!-- 1. Bayesian Inverse PINN Posterior Fidelity -->
             <article class="research-item">
-                <span class="item-status status-review">Under Review &bull; Journal of Computational Physics (Elsevier)</span>
-                <h3>Parameter-Space Error Localization and Posterior Fidelity of PINN Surrogates</h3>
+                <span class="item-status status-working">Working Paper &bull; Target: Nonlinearity (IOP Publishing &amp; LMS) &amp; ICLR 2027 Workshop</span>
+                <h3>Parameter-Space Error Localization and Posterior Fidelity of PINN Forward Surrogates</h3>
                 <p class="desc">
-                    Comprehensive 59-page theoretical and empirical investigation demonstrating that surrogate approximation errors enter Bayesian posteriors strictly through sparse sensor projections and localized likelihood filtering. Proved inverse-noise Total Variation and Wasserstein-1 stability bounds $\mathcal{O}(\sigma_{\mathrm{noise}}^{-2})$, formulated the Bayesian Fidelity Ratio (BFR) screening threshold across a balanced 240-model ensemble, and uncovered an observational projection crossover in 2D Incompressible Navier-Stokes and 5D multi-mode diffusion.
+                    Theoretical and empirical investigation demonstrating that surrogate forward approximation errors enter Bayesian posteriors strictly through sparse observation projections and localized likelihood filtering. Proved inverse-noise Total Variation and Wasserstein-1 stability bounds $\mathcal{O}(\sigma_{\mathrm{noise}}^{-2})$, established $10^{13}\times$ distortion asymmetry between posterior bulk and prior tails, formulated the Bayesian Fidelity Ratio (BFR) screening threshold across a balanced 240-model ensemble, and uncovered an observational projection crossover in 2D Incompressible Navier-Stokes and 5D multi-mode diffusion.
                 </p>
                 <div class="math-box">
                     $\mathcal{W}_1(\pi, \widehat{\pi}) \le \mathrm{diam}(\Theta) \cdot d_{\mathrm{TV}}(\pi, \widehat{\pi}) \le \frac{\mathrm{diam}(\Theta)}{2}\left[\exp(2R\varepsilon + \varepsilon^2) - 1\right] = \mathcal{O}(\sigma_{\mathrm{noise}}^{-2})$
